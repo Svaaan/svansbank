@@ -1,0 +1,15 @@
+C:\Users\danie\Documents\suvnet22\svansbank\bin\Debug\net6.0\svansbank.exe
+C:\Users\danie\Documents\suvnet22\svansbank\bin\Debug\net6.0\svansbank.deps.json
+C:\Users\danie\Documents\suvnet22\svansbank\bin\Debug\net6.0\svansbank.runtimeconfig.json
+C:\Users\danie\Documents\suvnet22\svansbank\bin\Debug\net6.0\svansbank.dll
+C:\Users\danie\Documents\suvnet22\svansbank\bin\Debug\net6.0\svansbank.pdb
+C:\Users\danie\Documents\suvnet22\svansbank\obj\Debug\net6.0\svansbank.csproj.AssemblyReference.cache
+C:\Users\danie\Documents\suvnet22\svansbank\obj\Debug\net6.0\svansbank.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danie\Documents\suvnet22\svansbank\obj\Debug\net6.0\svansbank.AssemblyInfoInputs.cache
+C:\Users\danie\Documents\suvnet22\svansbank\obj\Debug\net6.0\svansbank.AssemblyInfo.cs
+C:\Users\danie\Documents\suvnet22\svansbank\obj\Debug\net6.0\svansbank.csproj.CoreCompileInputs.cache
+C:\Users\danie\Documents\suvnet22\svansbank\obj\Debug\net6.0\svansbank.dll
+C:\Users\danie\Documents\suvnet22\svansbank\obj\Debug\net6.0\refint\svansbank.dll
+C:\Users\danie\Documents\suvnet22\svansbank\obj\Debug\net6.0\svansbank.pdb
+C:\Users\danie\Documents\suvnet22\svansbank\obj\Debug\net6.0\svansbank.genruntimeconfig.cache
+C:\Users\danie\Documents\suvnet22\svansbank\obj\Debug\net6.0\ref\svansbank.dll
