@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "tViU/N2zCX+O5hHfZGEqXXSiK+pL8xGg16PyBWx5I5Mdi3rd5Y7U0EDwaexxDFH9RNfC1jJZk1Sdzyow17rcwA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\danie\\Documents\\suvnet22\\svansbank\\database\\DATABASE.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\danie\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
+    "C:\\Users\\danie\\.nuget\\packages\\mysqlconnector\\2.2.1\\mysqlconnector.2.2.1.nupkg.sha512"
+  ],
+  "logs": []
+}
