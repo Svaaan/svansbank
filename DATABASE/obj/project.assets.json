@@ -89,11 +89,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\danie\\Documents\\Programmering\\svansbank\\DATABASE\\DATABASE.csproj",
+      "projectUniqueName": "C:\\Users\\danie\\Documents\\Gitrepos\\svansbank\\database\\DATABASE.csproj",
       "projectName": "DATABASE",
-      "projectPath": "C:\\Users\\danie\\Documents\\Programmering\\svansbank\\DATABASE\\DATABASE.csproj",
+      "projectPath": "C:\\Users\\danie\\Documents\\Gitrepos\\svansbank\\database\\DATABASE.csproj",
       "packagesPath": "C:\\Users\\danie\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\danie\\Documents\\Programmering\\svansbank\\DATABASE\\obj\\",
+      "outputPath": "C:\\Users\\danie\\Documents\\Gitrepos\\svansbank\\database\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\danie\\AppData\\Roaming\\NuGet\\NuGet.Config"
