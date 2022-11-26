@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\danie\\Documents\\suvnet22\\svansbank\\database\\DATABASE.csproj": {}
+    "C:\\Users\\danie\\Documents\\Programmering\\svansbank\\DATABASE\\DATABASE.csproj": {}
   },
   "projects": {
-    "C:\\Users\\danie\\Documents\\suvnet22\\svansbank\\database\\DATABASE.csproj": {
+    "C:\\Users\\danie\\Documents\\Programmering\\svansbank\\DATABASE\\DATABASE.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\danie\\Documents\\suvnet22\\svansbank\\database\\DATABASE.csproj",
+        "projectUniqueName": "C:\\Users\\danie\\Documents\\Programmering\\svansbank\\DATABASE\\DATABASE.csproj",
         "projectName": "DATABASE",
-        "projectPath": "C:\\Users\\danie\\Documents\\suvnet22\\svansbank\\database\\DATABASE.csproj",
+        "projectPath": "C:\\Users\\danie\\Documents\\Programmering\\svansbank\\DATABASE\\DATABASE.csproj",
         "packagesPath": "C:\\Users\\danie\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\danie\\Documents\\suvnet22\\svansbank\\database\\obj\\",
+        "outputPath": "C:\\Users\\danie\\Documents\\Programmering\\svansbank\\DATABASE\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\danie\\AppData\\Roaming\\NuGet\\NuGet.Config"
