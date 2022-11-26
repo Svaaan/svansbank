@@ -57,11 +57,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\danie\\Documents\\suvnet22\\svansbank\\ui\\svansbank.csproj",
+      "projectUniqueName": "C:\\Users\\danie\\Documents\\Programmering\\svansbank\\ui\\svansbank.csproj",
       "projectName": "svansbank",
-      "projectPath": "C:\\Users\\danie\\Documents\\suvnet22\\svansbank\\ui\\svansbank.csproj",
+      "projectPath": "C:\\Users\\danie\\Documents\\Programmering\\svansbank\\ui\\svansbank.csproj",
       "packagesPath": "C:\\Users\\danie\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\danie\\Documents\\suvnet22\\svansbank\\ui\\obj\\",
+      "outputPath": "C:\\Users\\danie\\Documents\\Programmering\\svansbank\\ui\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\danie\\AppData\\Roaming\\NuGet\\NuGet.Config"
