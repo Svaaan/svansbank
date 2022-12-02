@@ -13,7 +13,7 @@ class Startmenu
         string answer = string.Empty;
         while (menu)
         {
-            System.Console.WriteLine("[1]Logga in");
+            System.Console.WriteLine("[1] Logga in");
             System.Console.WriteLine("[2] Tjänst inloggning");
             System.Console.WriteLine("[3] Starta ditt medlemskap");
             System.Console.WriteLine("[4] Om Svan's bank");

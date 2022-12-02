@@ -14,7 +14,7 @@
              $$$$$$/      $/     $$/   $$/ $$/   $$/     $$$$$$/        $$$$$$$/  $$/   $$/ $$/   $$/ $$/   $$/";
         System.Console.WriteLine(title);
 
-        Startmenu startmenu = new();
+        Startmenu startmenu = new Startmenu();
        
     }
 }
