@@ -1,0 +1,19 @@
+class BankOffices
+{
+    //name, location, street adress, streetNumber, postalAdress
+    string name {get; set;}
+    string location {get; set;}
+    string streetAdress {get; set;}
+    int streetNumber {get; set;}
+    int postalNumber {get; set;}
+
+    public BankOffices (string name, string location, string streetAdress, int streetNumber, int postalNumber)
+    {
+        this.name = name;
+        this.location = location;
+        this.streetAdress = streetAdress;
+        this.streetNumber = streetNumber;
+        this.postalNumber = postalNumber;
+    }
+
+}
