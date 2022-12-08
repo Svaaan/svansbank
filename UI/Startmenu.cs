@@ -1,3 +1,4 @@
+namespace UI;
 class Startmenu
 {
     public void StartMenu()

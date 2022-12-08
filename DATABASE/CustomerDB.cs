@@ -1,6 +1,7 @@
 ﻿using DATABASE;
 using Dapper;
 using MySqlConnector;
+using TYPES;
 namespace DATABASE;
 class Customer
 {

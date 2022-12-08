@@ -11,4 +11,9 @@
     <PackageReference Include="mysqlconnector" Version="2.2.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\logic\logic.csproj" />
+    <ProjectReference Include="..\types\types.csproj" />
+  </ItemGroup>
+
 </Project>
