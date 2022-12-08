@@ -1,15 +1,15 @@
 namespace TYPES;
-class BankAccount
+public class BankAccount
 {
-    int accountNumber {get; set;}
-    string accountType {get; set;}
-    decimal totalBalance {get; set;}
+    int AccountNumber {get; set;}
+    string AccountType {get; set;}
+    decimal TotalBalance {get; set;}
 
     public BankAccount(int accountNumber, string accountType, decimal totalBalance)
     {
-        this.accountNumber = accountNumber;
-        this.accountType = accountType;
-        this.totalBalance = totalBalance;
+        this.AccountNumber = accountNumber;
+        this.AccountType = accountType;
+        this.TotalBalance = totalBalance;
 
     }
 }
