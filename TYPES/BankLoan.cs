@@ -1,3 +1,4 @@
+namespace TYPES;
 class BankLoan
 {
     decimal totalLoan {get; set;}

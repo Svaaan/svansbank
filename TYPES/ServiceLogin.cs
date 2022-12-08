@@ -1,3 +1,4 @@
+namespace TYPES;
 class ServiceLogin
 {
     int employementNumber {get; set;}

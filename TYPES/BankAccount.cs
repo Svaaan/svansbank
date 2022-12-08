@@ -1,3 +1,4 @@
+namespace TYPES;
 class BankAccount
 {
     int accountNumber {get; set;}

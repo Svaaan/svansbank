@@ -1,3 +1,4 @@
+namespace TYPES;
 class BankOffices
 {
     //name, location, street adress, streetNumber, postalAdress

@@ -17,4 +17,6 @@
         Startmenu startmenu = new Startmenu();
        
     }
-}
+} //IDE = Integrated development enviroment. En miljö där man utvecklar där det finns t.ex. bibliotek
+// CLI = Command line interface - Det är när när man skriver dotnet kommand 
+//CIL = Kod i form av instruktioner. Instruktionerna kompileras sedan till maskin kod.

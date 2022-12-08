@@ -1,29 +1,29 @@
 ﻿namespace TYPES;
 public class Customer
 {
-    string name {get; set;}
-    string lastName {get; set;}
-    string personalNumber {get; set;}
-    string mail {get; set;}
-    string phoneNumber {get; set;}
-    string location {get; set;}
-    string streetAdress {get; set;}
-    int streetNumber {get; set;}
-    int postalNumber {get; set;}
-    string passWord {get; set;}
-
-    public Customer (string name, string lastName, string personalNumber, string mail, string phoneNumber, string location, string streetAdress, int streetNumber, int postalNumber, string passWord)
+    string Name {get; set;}
+    string LastName {get; set;}
+    string PersonalNumber {get; set;}
+    string Mail {get; set;}
+    string PhoneNumber {get; set;}
+    string Location {get; set;}
+    string StreetAdress {get; set;}
+    int StreetNumber {get; set;}
+    int PostalNumber {get; set;}
+    string PassWord {get; set;}
+    int CustomerId {get; set;}
+    public Customer (string Name, string LastName, string PersonalNumber, string Mail, string PhoneNumber, string Location, string StreetAdress, int StreetNumber, int PostalNumber, string PassWord)
     {
-        this.name = name;
-        this.lastName = lastName;
-        this.personalNumber = personalNumber;
-        this.mail = mail;
-        this.phoneNumber = phoneNumber;
-        this.location = location;
-        this.streetAdress = streetAdress;
-        this.streetNumber = streetNumber;
-        this.postalNumber = postalNumber;
-        this.passWord = passWord;
+        this.Name = Name;
+        this.LastName = LastName;
+        this.PersonalNumber = PersonalNumber;
+        this.Mail = Mail;
+        this.PhoneNumber = PhoneNumber;
+        this.Location = Location;
+        this.StreetAdress = StreetAdress;
+        this.StreetNumber = StreetNumber;
+        this.PostalNumber = PostalNumber;
+        this.PassWord = PassWord;
 
     }
 
