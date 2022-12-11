@@ -1,6 +1,7 @@
 namespace TYPES;
 public class BankAccount
 {
+    int Id {get; set;}
     int AccountNumber {get; set;}
     string AccountType {get; set;}
     decimal TotalBalance {get; set;}

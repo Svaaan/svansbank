@@ -3,21 +3,86 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        string title = @"
-              ______   __     __   ______   __    __  __  ______         _______    ______   __    __  __    __ 
-             /      \ /  |   /  | /      \ /  \  /  |/  |/      \       /       \  /      \ /  \  /  |/  |  /  |
-            /$$$$$$  |$$ |   $$ |/$$$$$$  |$$  \ $$ |$$//$$$$$$  |      $$$$$$$  |/$$$$$$  |$$  \ $$ |$$ | /$$/ 
-            $$ \__$$/ $$ |   $$ |$$ |__$$ |$$$  \$$ |$/ $$ \__$$/       $$ |__$$ |$$ |__$$ |$$$  \$$ |$$ |/$$/  
-            $$      \ $$  \ /$$/ $$    $$ |$$$$  $$ |   $$      \       $$    $$< $$    $$ |$$$$  $$ |$$  $$<   
-             $$$$$$  | $$  /$$/  $$$$$$$$ |$$ $$ $$ |    $$$$$$ |      $$$$$$$  |$$$$$$$$ |$$ $$ $$ |$$$$$  \  
-            /  \__$$ |  $$ $$/   $$ |  $$ |$$ |$$$$ |   /  \__$$ |      $$ |__$$ |$$ |  $$ |$$ |$$$$ |$$ |$$  \ 
-            $$    $$/    $$$/    $$ |  $$ |$$ | $$$ |   $$    $$/       $$    $$/ $$ |  $$ |$$ | $$$ |$$ | $$  |
-             $$$$$$/      $/     $$/   $$/ $$/   $$/     $$$$$$/        $$$$$$$/  $$/   $$/ $$/   $$/ $$/   $$/";
-        System.Console.WriteLine(title);
+        int LoginRegister = 0;
 
-        Startmenu startmenu = new Startmenu();
-       
+        int startOption = 0;
+        int loggedInOption = 0;
+        int becomeMemberMenu = 0;
+        int serviceMenu = 0;
+        bool menu = true;
+        bool service = true;
+        bool loggedInMenu = true;
+        bool createMenu = true;
+        string answer = string.Empty;
+        while (menu)
+        {
+            System.Console.WriteLine("[1] Ditt Konto");
+            System.Console.WriteLine("[2] Tjänst inloggning");
+            System.Console.WriteLine("[3] Om Svan's bank");
+            answer = Console.ReadLine();
+
+            bool isNumber = int.TryParse(answer, out startOption);
+            if (!isNumber)
+            {
+                System.Console.WriteLine("Only number input is valid");
+            }
+
+            switch (startOption)
+            {
+                case 1:
+
+                    do 
+                    {
+                        System.Console.WriteLine("[1] Logga in");
+                        System.Console.WriteLine("[2] Skapa konto");
+                        answer = Console.ReadLine();
+
+                    } while (LoginRegister < 1 || LoginRegister > 2);
+                    if (LoginRegister == 1)
+                    {
+                        System.Console.WriteLine("Enter you email: ");
+                        
+                    }
+                    else if (LoginRegister == 2)
+                    {
+                        
+                    }
+
+                    break;
+
+                case 2:
+
+                    while (service)
+                    {
+                        switch (serviceMenu)
+                        {
+
+                        }
+                    }
+
+                    break;
+
+                case 3:
+
+                    while (createMenu)
+                    {
+                        switch (becomeMemberMenu)
+                        {
+
+                        }
+                    }
+
+                    break;
+
+                case 4:
+
+                    System.Console.WriteLine("Svan's bank startade pga att jag var tvungen att komma på något och det var ett tag sen jag arbeta med siffror.");
+
+                    break;
+
+            }
+
+        }
+
     }
-} //IDE = Integrated development enviroment. En miljö där man utvecklar där det finns t.ex. bibliotek
-// CLI = Command line interface - Det är när när man skriver dotnet kommand 
-//CIL = Kod i form av instruktioner. Instruktionerna kompileras sedan till maskin kod.
+}
