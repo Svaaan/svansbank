@@ -11,7 +11,18 @@ class Customer
         using (MySqlConnection connection = new MySqlConnection($"Server = localhost; Database = svans_bank;Uid=rood;Pwd=;"))
         {
             int rows = 0;
-            string query = "INSERT INTO customer(name, last_name, personal_number ,mail, phone_number, location, street_adress, street_number, postal_number, pass_word , bank_office_id)VALUES(@Name, @LastName, @PersonalNumber, @Mail, @PhoneNumber, @Location, @StreetAdress, @StreetNumber, @PostalNumber, @PassWord ,@BankOfficeId);";
+            string query = "START TRANSACTION;" +
+            "INSERT INTO customer(name, last_name, personal_number, mail, " +
+            " phone_number, location, street_adress, " +
+            " street_number, postal_number, pass_word, bank_office_id) " +
+            "VALUES(@Name, @LastName, @PersonalNumber, @Mail, @PhoneNumber, @Location, " +
+            " @StreetAdress, @StreetNumber, @PostalNumber, @PassWord, @BankOfficeId);" +
+            "SET @customer_id := LAST_INSERT_ID(); " +
+            "INSERT INTO bank_account (account_number, account_type, total_balance) " +
+            "VALUES (@accountNumber, @AccountType, @TotalBalance); " +
+            "SET @bank_account_id := LAST_INSERT_ID(); " +
+            "INSERT INTO customer_to_account(bank_account_id, customer_id) " +
+            "VALUES (@bank_account_id,@customer_id);COMMIT;";
             rows = connection.ExecuteScalar<int>(query, param: customer);
             return rows;
         }
@@ -28,7 +39,7 @@ class Customer
             return getCustomer;
         }
     }
-    
+
 
 
 
