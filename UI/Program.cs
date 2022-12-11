@@ -1,8 +1,14 @@
-﻿namespace UI;
+﻿using LOGIC;
+using TYPES;
+using DATABASE;
+namespace UI;
+
 internal class Program
 {
     private static void Main(string[] args)
     {
+        LoginService loginService = new(new CustomerDB());
+    
         int LoginRegister = 0;
 
         int startOption = 0;
@@ -35,17 +41,26 @@ internal class Program
                     {
                         System.Console.WriteLine("[1] Logga in");
                         System.Console.WriteLine("[2] Skapa konto");
-                        answer = Console.ReadLine();
+                        LoginRegister = int.Parse (Console.ReadLine());
 
                     } while (LoginRegister < 1 || LoginRegister > 2);
                     if (LoginRegister == 1)
                     {
-                        System.Console.WriteLine("Enter you email: ");
+                        System.Console.WriteLine("Epost adress: ");
+                        string email = Console.ReadLine();
+                        System.Console.WriteLine("Lösenord: ");
+                        string passWord = Console.ReadLine();
                         
+                        Customer customer = loginService.TryLogin(email, passWord);
+                        if(customer != null)
+                        {
+                            Console.WriteLine(customer.Name + "hej");
+                        }
+
                     }
                     else if (LoginRegister == 2)
                     {
-                        
+
                     }
 
                     break;

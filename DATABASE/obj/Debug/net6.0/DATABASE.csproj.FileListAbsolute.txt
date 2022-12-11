@@ -1,0 +1,15 @@
+C:\Users\danie\Documents\Programmering\svansbank\DATABASE\bin\Debug\net6.0\DATABASE.deps.json
+C:\Users\danie\Documents\Programmering\svansbank\DATABASE\bin\Debug\net6.0\DATABASE.dll
+C:\Users\danie\Documents\Programmering\svansbank\DATABASE\bin\Debug\net6.0\DATABASE.pdb
+C:\Users\danie\Documents\Programmering\svansbank\DATABASE\bin\Debug\net6.0\types.dll
+C:\Users\danie\Documents\Programmering\svansbank\DATABASE\bin\Debug\net6.0\types.pdb
+C:\Users\danie\Documents\Programmering\svansbank\DATABASE\obj\Debug\net6.0\DATABASE.csproj.AssemblyReference.cache
+C:\Users\danie\Documents\Programmering\svansbank\DATABASE\obj\Debug\net6.0\DATABASE.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danie\Documents\Programmering\svansbank\DATABASE\obj\Debug\net6.0\DATABASE.AssemblyInfoInputs.cache
+C:\Users\danie\Documents\Programmering\svansbank\DATABASE\obj\Debug\net6.0\DATABASE.AssemblyInfo.cs
+C:\Users\danie\Documents\Programmering\svansbank\DATABASE\obj\Debug\net6.0\DATABASE.csproj.CoreCompileInputs.cache
+C:\Users\danie\Documents\Programmering\svansbank\DATABASE\obj\Debug\net6.0\DATABASE.csproj.CopyComplete
+C:\Users\danie\Documents\Programmering\svansbank\DATABASE\obj\Debug\net6.0\DATABASE.dll
+C:\Users\danie\Documents\Programmering\svansbank\DATABASE\obj\Debug\net6.0\refint\DATABASE.dll
+C:\Users\danie\Documents\Programmering\svansbank\DATABASE\obj\Debug\net6.0\DATABASE.pdb
+C:\Users\danie\Documents\Programmering\svansbank\DATABASE\obj\Debug\net6.0\ref\DATABASE.dll

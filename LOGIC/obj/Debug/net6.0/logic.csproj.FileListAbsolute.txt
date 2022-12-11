@@ -1,0 +1,17 @@
+C:\Users\danie\Documents\Programmering\svansbank\logic\bin\Debug\net6.0\logic.deps.json
+C:\Users\danie\Documents\Programmering\svansbank\logic\bin\Debug\net6.0\logic.dll
+C:\Users\danie\Documents\Programmering\svansbank\logic\bin\Debug\net6.0\logic.pdb
+C:\Users\danie\Documents\Programmering\svansbank\logic\bin\Debug\net6.0\DATABASE.dll
+C:\Users\danie\Documents\Programmering\svansbank\logic\bin\Debug\net6.0\types.dll
+C:\Users\danie\Documents\Programmering\svansbank\logic\bin\Debug\net6.0\DATABASE.pdb
+C:\Users\danie\Documents\Programmering\svansbank\logic\bin\Debug\net6.0\types.pdb
+C:\Users\danie\Documents\Programmering\svansbank\logic\obj\Debug\net6.0\logic.csproj.AssemblyReference.cache
+C:\Users\danie\Documents\Programmering\svansbank\logic\obj\Debug\net6.0\logic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danie\Documents\Programmering\svansbank\logic\obj\Debug\net6.0\logic.AssemblyInfoInputs.cache
+C:\Users\danie\Documents\Programmering\svansbank\logic\obj\Debug\net6.0\logic.AssemblyInfo.cs
+C:\Users\danie\Documents\Programmering\svansbank\logic\obj\Debug\net6.0\logic.csproj.CoreCompileInputs.cache
+C:\Users\danie\Documents\Programmering\svansbank\logic\obj\Debug\net6.0\logic.csproj.CopyComplete
+C:\Users\danie\Documents\Programmering\svansbank\logic\obj\Debug\net6.0\logic.dll
+C:\Users\danie\Documents\Programmering\svansbank\logic\obj\Debug\net6.0\refint\logic.dll
+C:\Users\danie\Documents\Programmering\svansbank\logic\obj\Debug\net6.0\logic.pdb
+C:\Users\danie\Documents\Programmering\svansbank\logic\obj\Debug\net6.0\ref\logic.dll

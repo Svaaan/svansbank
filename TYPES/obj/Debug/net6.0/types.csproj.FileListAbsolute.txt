@@ -1,0 +1,12 @@
+C:\Users\danie\Documents\Programmering\svansbank\types\bin\Debug\net6.0\types.deps.json
+C:\Users\danie\Documents\Programmering\svansbank\types\bin\Debug\net6.0\types.dll
+C:\Users\danie\Documents\Programmering\svansbank\types\bin\Debug\net6.0\types.pdb
+C:\Users\danie\Documents\Programmering\svansbank\types\obj\Debug\net6.0\types.csproj.AssemblyReference.cache
+C:\Users\danie\Documents\Programmering\svansbank\types\obj\Debug\net6.0\types.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danie\Documents\Programmering\svansbank\types\obj\Debug\net6.0\types.AssemblyInfoInputs.cache
+C:\Users\danie\Documents\Programmering\svansbank\types\obj\Debug\net6.0\types.AssemblyInfo.cs
+C:\Users\danie\Documents\Programmering\svansbank\types\obj\Debug\net6.0\types.csproj.CoreCompileInputs.cache
+C:\Users\danie\Documents\Programmering\svansbank\types\obj\Debug\net6.0\types.dll
+C:\Users\danie\Documents\Programmering\svansbank\types\obj\Debug\net6.0\refint\types.dll
+C:\Users\danie\Documents\Programmering\svansbank\types\obj\Debug\net6.0\types.pdb
+C:\Users\danie\Documents\Programmering\svansbank\types\obj\Debug\net6.0\ref\types.dll

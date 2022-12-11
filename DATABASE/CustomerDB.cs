@@ -3,7 +3,7 @@ using Dapper;
 using MySqlConnector;
 using TYPES;
 namespace DATABASE;
-class Customer
+public class CustomerDB : IcustomerHandeler
 {
     public List<Customer> customer = new();
     public int AddCustomer(Customer customer)
@@ -37,6 +37,17 @@ class Customer
             string query = "SELECT id AS 'CustomerId', name AS 'Name', last_name AS 'LastName', personal_number AS 'PersonalNumber', location AS 'Location', street_adress AS 'StreetAdress', street_number AS 'StreetNumber', postal_number AS 'PostalNumber', pass_word AS 'PassWord' FROM customer;";
             getCustomer = connection.Query<Customer>(query).ToList();
             return getCustomer;
+        }
+    }
+       public Customer GetCustomerByLogIn(string email, string passWord)
+    {
+        Customer customer = new Customer();
+
+        using (MySqlConnection connection = new MySqlConnection($"Server=localhost;Database=svans_bank;Uid=root;Pwd=;"))
+        {
+            string query = "SELECT id AS 'Id', name AS 'Name', last_name AS 'LastName', personal_number AS 'PersonalNumber', location AS 'Location', street_adress AS 'StreetAdress', street_number AS 'StreetNumber', postal_number AS 'PostalNumber', pass_word AS 'PassWord' FROM customer WHERE email = @email AND pass_word = @PassWord;";
+            customer = connection.QuerySingle<Customer>(query, new{@email = email, @PassWord = passWord});
+            return customer;
         }
     }
 

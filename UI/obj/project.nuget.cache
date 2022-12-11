@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "J2IpORB+ausy0ZQyQNIFtMabmIjQ+cVHkwmaHou+1SRTJgSuevHde5SvXz3lA9jguT1okPjsDKDJ/ZfOt7VmKA==",
+  "dgSpecHash": "kQtjI70OeEx/i8ssAuM4Gvsq8R5TOmjtn2W0jPgn3H8i7QUVMgrBa36FY0Nr6eLa+E8MvgV0NRITeH447zWBbQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\danie\\Documents\\Programmering\\svansbank\\ui\\svansbank.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\danie\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\danie\\.nuget\\packages\\mysqlconnector\\2.2.1\\mysqlconnector.2.2.1.nupkg.sha512"
   ],
   "logs": []

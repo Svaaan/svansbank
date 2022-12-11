@@ -30,3 +30,10 @@ C:\Users\danie\Documents\Programmering\svansbank\ui\obj\Debug\net6.0\refint\svan
 C:\Users\danie\Documents\Programmering\svansbank\ui\obj\Debug\net6.0\svansbank.pdb
 C:\Users\danie\Documents\Programmering\svansbank\ui\obj\Debug\net6.0\svansbank.genruntimeconfig.cache
 C:\Users\danie\Documents\Programmering\svansbank\ui\obj\Debug\net6.0\ref\svansbank.dll
+C:\Users\danie\Documents\Programmering\svansbank\ui\bin\Debug\net6.0\Dapper.dll
+C:\Users\danie\Documents\Programmering\svansbank\ui\bin\Debug\net6.0\DATABASE.dll
+C:\Users\danie\Documents\Programmering\svansbank\ui\bin\Debug\net6.0\logic.dll
+C:\Users\danie\Documents\Programmering\svansbank\ui\bin\Debug\net6.0\types.dll
+C:\Users\danie\Documents\Programmering\svansbank\ui\bin\Debug\net6.0\logic.pdb
+C:\Users\danie\Documents\Programmering\svansbank\ui\bin\Debug\net6.0\types.pdb
+C:\Users\danie\Documents\Programmering\svansbank\ui\bin\Debug\net6.0\DATABASE.pdb

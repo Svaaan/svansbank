@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "At9mHvP4xB2FEDHQ+rZztJ+v13GUCgMfZOFdEVPdbRzZFb1GhvVQW0FLPc6epV21PKreS+D0bUC38n6F+3sP0Q==",
+  "dgSpecHash": "EtHAkbteD9S4BQcvidDNOokNU9ZDnE8xDsHLqLKxdWIM51H6xSz5mwYHpNemu4jQsHBSw4jrUewNoCCPBZQuCw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\danie\\Documents\\Gitrepos\\svansbank\\database\\DATABASE.csproj",
+  "projectFilePath": "C:\\Users\\danie\\Documents\\Programmering\\svansbank\\DATABASE\\DATABASE.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\danie\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\danie\\.nuget\\packages\\mysqlconnector\\2.2.1\\mysqlconnector.2.2.1.nupkg.sha512"

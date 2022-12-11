@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "Dapper/2.0.123": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "MySqlConnector/2.2.1": {
         "type": "package",
         "compile": {
@@ -14,10 +27,67 @@
             "related": ".xml"
           }
         }
+      },
+      "DATABASE/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "dapper": "2.0.123",
+          "mysqlconnector": "2.2.1",
+          "types": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DATABASE.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DATABASE.dll": {}
+        }
+      },
+      "logic/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "DATABASE": "1.0.0",
+          "types": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/logic.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/logic.dll": {}
+        }
+      },
+      "types/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/types.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/types.dll": {}
+        }
       }
     }
   },
   "libraries": {
+    "Dapper/2.0.123": {
+      "sha512": "RDFF4rBLLmbpi6pwkY7q/M6UXHRJEOerplDGE5jwEkP/JGJnBauAClYavNKJPW1yOTWRPIyfj4is3EaJxQXILQ==",
+      "type": "package",
+      "path": "dapper/2.0.123",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Dapper.png",
+        "dapper.2.0.123.nupkg.sha512",
+        "dapper.nuspec",
+        "lib/net461/Dapper.dll",
+        "lib/net461/Dapper.xml",
+        "lib/net5.0/Dapper.dll",
+        "lib/net5.0/Dapper.xml",
+        "lib/netstandard2.0/Dapper.dll",
+        "lib/netstandard2.0/Dapper.xml"
+      ]
+    },
     "MySqlConnector/2.2.1": {
       "sha512": "k5wwd56u2WoIVLxeKsUHl8WS27shGluK6yLwziAnJwERnMQ5TsAFHRpr6EKEfpLwGF+FwrbmJXUdCk9+EU7Wrw==",
       "type": "package",
@@ -44,11 +114,29 @@
         "mysqlconnector.2.2.1.nupkg.sha512",
         "mysqlconnector.nuspec"
       ]
+    },
+    "DATABASE/1.0.0": {
+      "type": "project",
+      "path": "../DATABASE/DATABASE.csproj",
+      "msbuildProject": "../DATABASE/DATABASE.csproj"
+    },
+    "logic/1.0.0": {
+      "type": "project",
+      "path": "../logic/logic.csproj",
+      "msbuildProject": "../logic/logic.csproj"
+    },
+    "types/1.0.0": {
+      "type": "project",
+      "path": "../types/types.csproj",
+      "msbuildProject": "../types/types.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "mysqlconnector >= 2.2.1"
+      "DATABASE >= 1.0.0",
+      "logic >= 1.0.0",
+      "mysqlconnector >= 2.2.1",
+      "types >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -75,7 +163,17 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\danie\\Documents\\Programmering\\svansbank\\DATABASE\\DATABASE.csproj": {
+              "projectPath": "C:\\Users\\danie\\Documents\\Programmering\\svansbank\\DATABASE\\DATABASE.csproj"
+            },
+            "C:\\Users\\danie\\Documents\\Programmering\\svansbank\\logic\\logic.csproj": {
+              "projectPath": "C:\\Users\\danie\\Documents\\Programmering\\svansbank\\logic\\logic.csproj"
+            },
+            "C:\\Users\\danie\\Documents\\Programmering\\svansbank\\types\\types.csproj": {
+              "projectPath": "C:\\Users\\danie\\Documents\\Programmering\\svansbank\\types\\types.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

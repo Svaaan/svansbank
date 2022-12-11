@@ -1,18 +1,18 @@
 ﻿namespace TYPES;
 public class Customer
 {
-    string Name {get; set;}
-    string LastName {get; set;}
-    string PersonalNumber {get; set;}
-    string Mail {get; set;}
-    string PhoneNumber {get; set;}
-    string Location {get; set;}
-    string StreetAdress {get; set;}
-    int StreetNumber {get; set;}
-    int PostalNumber {get; set;}
-    string PassWord {get; set;}
-    int CustomerId {get; set;}
-    int BankOfficeId {get; set;}
+    public int Id{get;set;}
+    public string Name {get; set;}
+    public string LastName {get; set;}
+    public string PersonalNumber {get; set;}
+    public string Mail {get; set;}
+    public string PhoneNumber {get; set;}
+    public string Location {get; set;}
+    public string StreetAdress {get; set;}
+    public int StreetNumber {get; set;}
+    public int PostalNumber {get; set;}
+    public string PassWord {get; set;}
+    public int BankOfficeId {get; set;}
     public Customer (string Name, string LastName, string PersonalNumber, string Mail, string PhoneNumber, string Location, string StreetAdress, int StreetNumber, int PostalNumber, string PassWord)
     {
         this.Name = Name;
@@ -25,6 +25,10 @@ public class Customer
         this.StreetNumber = StreetNumber;
         this.PostalNumber = PostalNumber;
         this.PassWord = PassWord;
+
+    }
+    public Customer ()
+    {
 
     }
 

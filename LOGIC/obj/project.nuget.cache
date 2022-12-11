@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "nAdwKs5fwBdXDauHmwwlwScFGI0gGpet0QD7lG87BzlQTg9VmhhjPmYi3ni3XttzgPrSsgVcwdC+9LAbr+ry8Q==",
+  "dgSpecHash": "sAyjv/+rFi6aZpuGXmBay05ijSSWwg7LVG01cVKnPVounxUgT3UvLUFJSifoqQt3Y4CiSTAV55fABO5GU8CE6Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\danie\\Documents\\suvnet22\\svansbank\\LOGIC\\LOGIC.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\danie\\Documents\\Programmering\\svansbank\\logic\\logic.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\danie\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
+    "C:\\Users\\danie\\.nuget\\packages\\mysqlconnector\\2.2.1\\mysqlconnector.2.2.1.nupkg.sha512"
+  ],
   "logs": []
 }

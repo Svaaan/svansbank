@@ -27,6 +27,16 @@
             "related": ".xml"
           }
         }
+      },
+      "types/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/types.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/types.dll": {}
+        }
       }
     }
   },
@@ -75,12 +85,18 @@
         "mysqlconnector.2.2.1.nupkg.sha512",
         "mysqlconnector.nuspec"
       ]
+    },
+    "types/1.0.0": {
+      "type": "project",
+      "path": "../types/types.csproj",
+      "msbuildProject": "../types/types.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "dapper >= 2.0.123",
-      "mysqlconnector >= 2.2.1"
+      "mysqlconnector >= 2.2.1",
+      "types >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -89,11 +105,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\danie\\Documents\\Gitrepos\\svansbank\\database\\DATABASE.csproj",
+      "projectUniqueName": "C:\\Users\\danie\\Documents\\Programmering\\svansbank\\DATABASE\\DATABASE.csproj",
       "projectName": "DATABASE",
-      "projectPath": "C:\\Users\\danie\\Documents\\Gitrepos\\svansbank\\database\\DATABASE.csproj",
+      "projectPath": "C:\\Users\\danie\\Documents\\Programmering\\svansbank\\DATABASE\\DATABASE.csproj",
       "packagesPath": "C:\\Users\\danie\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\danie\\Documents\\Gitrepos\\svansbank\\database\\obj\\",
+      "outputPath": "C:\\Users\\danie\\Documents\\Programmering\\svansbank\\DATABASE\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\danie\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -107,7 +123,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\danie\\Documents\\Programmering\\svansbank\\types\\types.csproj": {
+              "projectPath": "C:\\Users\\danie\\Documents\\Programmering\\svansbank\\types\\types.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
