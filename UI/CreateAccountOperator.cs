@@ -14,7 +14,6 @@ public class CreateAccountOperator
     {
         Customer customer1 = new();
         BankAccount bankAccount1 = new();
-
         try
         {
             while (true)
@@ -50,9 +49,8 @@ public class CreateAccountOperator
                 bankAccount1.AccountType = "Transaktionskonto";
                 bankAccount1.AccountNumber = RandomNumberGenerator();
                 bankAccount1.TotalBalance = 0;
-                Console.WriteLine("Skapar bankkonto");
                 _iRegistrationService.CreateCustomerAccount(customer1, bankAccount1);
-                Console.WriteLine("Skapat bankkonto!");
+                Console.WriteLine("Välkommen som kund hos svan's bank ditt konto är nu registrerat");
                 break;
             }
         }
@@ -67,9 +65,9 @@ public class CreateAccountOperator
          int randomNumber = random.Next(10000, 99999);
 
          Random random1 = new Random();
-         int randomNumber1 = random.Next(1000,9999);
+         int randomNumber1 = random.Next(1000, 9999);
 
-         string accountNumber = (randomNumber + " - " + randomNumber1);
+         string accountNumber = (randomNumber + "-" + randomNumber1);
 
          return accountNumber;
     }

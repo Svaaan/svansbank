@@ -11,7 +11,7 @@ internal class Program
         RegistrationService registrationService = new(new CustomerDB());
         CreateAccountOperator createAccountOperator = new(registrationService);
 
-    
+
         int LoginRegister = 0;
 
         int startOption = 0;
@@ -40,11 +40,11 @@ internal class Program
             {
                 case 1:
 
-                    do 
+                    do
                     {
                         System.Console.WriteLine("[1] Logga in");
                         System.Console.WriteLine("[2] Skapa konto");
-                        LoginRegister = int.Parse (Console.ReadLine());
+                        LoginRegister = int.Parse(Console.ReadLine());
 
                     } while (LoginRegister < 1 || LoginRegister > 2);
                     if (LoginRegister == 1)
@@ -53,7 +53,7 @@ internal class Program
                         string email = Console.ReadLine();
                         System.Console.WriteLine("Lösenord: ");
                         string passWord = Console.ReadLine();
-                        
+
                         Customer customer = loginService.TryLogin(email, passWord);
 
                     }
@@ -75,19 +75,8 @@ internal class Program
 
                     break;
 
+
                 case 3:
-
-                    while (createMenu)
-                    {
-                        switch (becomeMemberMenu)
-                        {
-
-                        }
-                    }
-
-                    break;
-
-                case 4:
 
                     System.Console.WriteLine("Svan's bank startade pga att jag var tvungen att komma på något och det var ett tag sen jag arbeta med siffror.");
 

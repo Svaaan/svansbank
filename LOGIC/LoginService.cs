@@ -8,10 +8,6 @@ public class LoginService : ILoginService
     {
         _icustomerHandeler = icustomerHandeler;
     }
-    public Customer AddCustomer(Customer customer)
-    {
-        return customer;
-    }
     public Customer TryLogin (string email, string passWord)
     {
         //skicka in mail och password till metoden i databas som kollar om det finns
@@ -20,4 +16,5 @@ public class LoginService : ILoginService
         //catcha System.InvalidOperationException
         return customer;
     }
+    
 }
