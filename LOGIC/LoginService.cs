@@ -1,7 +1,7 @@
 ﻿using TYPES;
 using DATABASE;
 namespace LOGIC;
-public class LoginService
+public class LoginService : ILoginService
 {
     IcustomerHandeler _icustomerHandeler;
     public LoginService(IcustomerHandeler icustomerHandeler)

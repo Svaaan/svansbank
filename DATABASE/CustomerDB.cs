@@ -6,16 +6,16 @@ namespace DATABASE;
 public class CustomerDB : IcustomerHandeler
 {
     public List<Customer> customer = new();
-    public int AddCustomer(Customer customer)
+    public int AddCustomer(Customer customer, BankAccount  bankAccount)
     {
         using (MySqlConnection connection = new MySqlConnection($"Server = localhost; Database = svans_bank;Uid=rood;Pwd=;"))
         {
             int rows = 0;
             string query = "START TRANSACTION;" +
             "INSERT INTO customer(name, last_name, personal_number, mail, " +
-            " phone_number, location, street_adress, " +
+            " phone_number, city, street_adress, " +
             " street_number, postal_number, pass_word, bank_office_id) " +
-            "VALUES(@Name, @LastName, @PersonalNumber, @Mail, @PhoneNumber, @Location, " +
+            "VALUES(@Name, @LastName, @PersonalNumber, @Mail, @PhoneNumber, @City, " +
             " @StreetAdress, @StreetNumber, @PostalNumber, @PassWord, @BankOfficeId);" +
             "SET @customer_id := LAST_INSERT_ID(); " +
             "INSERT INTO bank_account (account_number, account_type, total_balance) " +
@@ -34,7 +34,7 @@ public class CustomerDB : IcustomerHandeler
 
         using (MySqlConnection connection = new MySqlConnection($"Server=localhost;Database=svans_bank;Uid=root;Pwd=;"))
         {
-            string query = "SELECT id AS 'CustomerId', name AS 'Name', last_name AS 'LastName', personal_number AS 'PersonalNumber', location AS 'Location', street_adress AS 'StreetAdress', street_number AS 'StreetNumber', postal_number AS 'PostalNumber', pass_word AS 'PassWord' FROM customer;";
+            string query = "SELECT id AS 'CustomerId', name AS 'Name', last_name AS 'LastName', personal_number AS 'PersonalNumber', city AS 'City', street_adress AS 'StreetAdress', street_number AS 'StreetNumber', postal_number AS 'PostalNumber', pass_word AS 'PassWord' FROM customer;";
             getCustomer = connection.Query<Customer>(query).ToList();
             return getCustomer;
         }
@@ -45,7 +45,7 @@ public class CustomerDB : IcustomerHandeler
 
         using (MySqlConnection connection = new MySqlConnection($"Server=localhost;Database=svans_bank;Uid=root;Pwd=;"))
         {
-            string query = "SELECT id AS 'Id', name AS 'Name', last_name AS 'LastName', personal_number AS 'PersonalNumber', location AS 'Location', street_adress AS 'StreetAdress', street_number AS 'StreetNumber', postal_number AS 'PostalNumber', pass_word AS 'PassWord' FROM customer WHERE email = @email AND pass_word = @PassWord;";
+            string query = "SELECT id AS 'Id', name AS 'Name', last_name AS 'LastName', personal_number AS 'PersonalNumber', city AS 'City', street_adress AS 'StreetAdress', street_number AS 'StreetNumber', postal_number AS 'PostalNumber', pass_word AS 'PassWord' FROM customer WHERE email = @email AND pass_word = @PassWord;";
             customer = connection.QuerySingle<Customer>(query, new{@email = email, @PassWord = passWord});
             return customer;
         }

@@ -52,10 +52,6 @@ internal class Program
                         string passWord = Console.ReadLine();
                         
                         Customer customer = loginService.TryLogin(email, passWord);
-                        if(customer != null)
-                        {
-                            Console.WriteLine(customer.Name + "hej");
-                        }
 
                     }
                     else if (LoginRegister == 2)

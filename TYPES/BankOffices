@@ -2,11 +2,11 @@ namespace TYPES;
 class BankOffices
 {
     //name, location, street adress, streetNumber, postalAdress
-    string name {get; set;}
-    string location {get; set;}
-    string streetAdress {get; set;}
-    int streetNumber {get; set;}
-    int postalNumber {get; set;}
+    public string name {get; set;}
+    public string location {get; set;}
+    public string streetAdress {get; set;}
+    public int streetNumber {get; set;}
+    public int postalNumber {get; set;}
 
     public BankOffices (string name, string location, string streetAdress, int streetNumber, int postalNumber)
     {

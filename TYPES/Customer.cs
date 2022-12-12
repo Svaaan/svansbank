@@ -7,20 +7,20 @@ public class Customer
     public string PersonalNumber {get; set;}
     public string Mail {get; set;}
     public string PhoneNumber {get; set;}
-    public string Location {get; set;}
+    public string City {get; set;}
     public string StreetAdress {get; set;}
     public int StreetNumber {get; set;}
     public int PostalNumber {get; set;}
     public string PassWord {get; set;}
     public int BankOfficeId {get; set;}
-    public Customer (string Name, string LastName, string PersonalNumber, string Mail, string PhoneNumber, string Location, string StreetAdress, int StreetNumber, int PostalNumber, string PassWord)
+    public Customer (string Name, string LastName, string PersonalNumber, string Mail, string PhoneNumber, string City, string StreetAdress, int StreetNumber, int PostalNumber, string PassWord)
     {
         this.Name = Name;
         this.LastName = LastName;
         this.PersonalNumber = PersonalNumber;
         this.Mail = Mail;
         this.PhoneNumber = PhoneNumber;
-        this.Location = Location;
+        this.City = City;
         this.StreetAdress = StreetAdress;
         this.StreetNumber = StreetNumber;
         this.PostalNumber = PostalNumber;

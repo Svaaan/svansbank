@@ -1,9 +1,9 @@
 namespace TYPES;
 class BankLoan
 {
-    decimal totalLoan {get; set;}
-    string interestType {get; set;}
-    decimal monthlyPayback {get; set;}
+    public decimal totalLoan {get; set;}
+    public string interestType {get; set;}
+    public decimal monthlyPayback {get; set;}
 
     public BankLoan(decimal totalLoan, string interestType, decimal monthlyPayback)
     {

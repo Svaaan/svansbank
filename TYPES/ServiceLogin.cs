@@ -1,10 +1,10 @@
 namespace TYPES;
 class ServiceLogin
 {
-    int employementNumber {get; set;}
-    string name {get; set;}
-    string lastName {get; set;}
-    string email {get; set;}
+    public int employementNumber {get; set;}
+    public string name {get; set;}
+    public string lastName {get; set;}
+    public string email {get; set;}
 
     public ServiceLogin (int employementNumber, string name, string lastName, string email)
     {
