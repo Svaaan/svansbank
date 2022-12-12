@@ -8,6 +8,9 @@ internal class Program
     private static void Main(string[] args)
     {
         LoginService loginService = new(new CustomerDB());
+        RegistrationService registrationService = new(new CustomerDB());
+        CreateAccountOperator createAccountOperator = new(registrationService);
+
     
         int LoginRegister = 0;
 
@@ -56,9 +59,8 @@ internal class Program
                     }
                     else if (LoginRegister == 2)
                     {
-
+                        createAccountOperator.CreateAccount();
                     }
-
                     break;
 
                 case 2:

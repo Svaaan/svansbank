@@ -8,22 +8,22 @@ public class CustomerDB : IcustomerHandeler
     public List<Customer> customer = new();
     public int AddCustomer(Customer customer, BankAccount  bankAccount)
     {
-        using (MySqlConnection connection = new MySqlConnection($"Server = localhost; Database = svans_bank;Uid=rood;Pwd=;"))
+        using (MySqlConnection connection = new MySqlConnection($"Server = localhost; Database = svans_bank;Uid=root;Pwd=;Allow User Variables=true;"))
         {
             int rows = 0;
             string query = "START TRANSACTION;" +
-            "INSERT INTO customer(name, last_name, personal_number, mail, " +
+            "INSERT INTO customer(name, last_name, personal_number, email, " +
             " phone_number, city, street_adress, " +
-            " street_number, postal_number, pass_word, bank_office_id) " +
+            " street_number, postal_number, pass_word, bank_id) " +
             "VALUES(@Name, @LastName, @PersonalNumber, @Mail, @PhoneNumber, @City, " +
-            " @StreetAdress, @StreetNumber, @PostalNumber, @PassWord, @BankOfficeId);" +
+            " @StreetAdress, @StreetNumber, @PostalNumber, @PassWord, @BankId);" +
             "SET @customer_id := LAST_INSERT_ID(); " +
             "INSERT INTO bank_account (account_number, account_type, total_balance) " +
             "VALUES (@accountNumber, @AccountType, @TotalBalance); " +
             "SET @bank_account_id := LAST_INSERT_ID(); " +
             "INSERT INTO customer_to_account(bank_account_id, customer_id) " +
-            "VALUES (@bank_account_id,@customer_id);COMMIT;";
-            rows = connection.ExecuteScalar<int>(query, param: customer);
+            "VALUES (@bank_account_id,customer_id);COMMIT;";
+            rows = connection.ExecuteScalar<int>(query, new{@Name = customer.Name, @LastName = customer.LastName, @PersonalNumber = customer.PersonalNumber,@Mail = customer.Mail,@PhoneNumber = customer.PhoneNumber, @City = customer.City, @StreetAdress = customer.StreetAdress, @StreetNumber = customer.StreetNumber, @PostalNumber = customer.PostalNumber, @PassWord = customer.PassWord,@BankId = @customer.BankId, @AccountType = bankAccount.AccountType, @AccountNumber = bankAccount.AccountNumber, @TotalBalance = bankAccount.TotalBalance});
             return rows;
         }
     }

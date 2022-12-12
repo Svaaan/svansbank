@@ -12,7 +12,7 @@ public class Customer
     public int StreetNumber {get; set;}
     public int PostalNumber {get; set;}
     public string PassWord {get; set;}
-    public int BankOfficeId {get; set;}
+    public int BankId {get; set;}
     public Customer (string Name, string LastName, string PersonalNumber, string Mail, string PhoneNumber, string City, string StreetAdress, int StreetNumber, int PostalNumber, string PassWord)
     {
         this.Name = Name;
