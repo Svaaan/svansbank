@@ -11,4 +11,8 @@ class BankLoan
         this.interestType = interestType;
         this.monthlyPayback = monthlyPayback;
     }
+    public BankLoan()
+    {
+        
+    }
 }

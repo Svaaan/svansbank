@@ -4,5 +4,5 @@ namespace LOGIC;
 public interface ICustomerService
 {
     public Customer AddCustomer(Customer customer);
-    public Customer GetCustomer(Customer customer);
+    public void GetCustomer(Customer customer);
 }

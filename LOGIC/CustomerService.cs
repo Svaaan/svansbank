@@ -12,12 +12,12 @@ public class CustomerService : ICustomerService
     {
         return customer;
     }
-    public Customer GetCustomer(Customer customer)
+    public void GetCustomer(Customer customer)
     {
        
-       Customer getCustomer = new();
-
-       return customer;    
-               
+       if(customer.Id == customer.Id)
+       {
+          
+       }        
     }
 }

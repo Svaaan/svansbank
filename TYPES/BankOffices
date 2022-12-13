@@ -16,5 +16,9 @@ class BankOffices
         this.streetNumber = streetNumber;
         this.postalNumber = postalNumber;
     }
+    public BankOffices()
+    {
+
+    }
 
 }

@@ -5,7 +5,7 @@ public class Transactions
     // public decimal Payment {get; set;}
     // public decimal Withdrawals {get; set;}
     // public decimal Transfer {get; set;}
-    public int ID {get;set;}
+    public int TransactionId {get;set;}
     public int CustomerId{get;set;}
     public int BankAccountId{get;set;}
     public decimal Amount {get; set;}
@@ -13,6 +13,7 @@ public class Transactions
 
     public Transactions(decimal amount)
     {
+        
         Amount = amount;
         TransationDate = DateTime.Now;
     }

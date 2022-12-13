@@ -13,4 +13,8 @@ class ServiceLogin
         this.lastName = lastName; 
         this.email = email;
     }
+    public ServiceLogin ()
+    {
+        
+    }
 }
