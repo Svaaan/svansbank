@@ -2,7 +2,7 @@ using Dapper;
 using MySqlConnector;
 using TYPES;
 namespace DATABASE;
-class BankDB
+class BankDB : IBankHandeler
 {
     public List <BankDB> BankOffices = new();
 
