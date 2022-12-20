@@ -49,13 +49,13 @@ internal class Program
                     } while (LoginRegister < 1 || LoginRegister > 2);
                     if (LoginRegister == 1)
                     {
+                        CustomerPageOperator customerPageOperator = new();
                         System.Console.WriteLine("Epost adress: ");
                         string email = Console.ReadLine();
                         System.Console.WriteLine("Lösenord: ");
                         string passWord = Console.ReadLine();
-
                         Customer customer = loginService.TryLogin(email, passWord);
-
+                        if(customer != null) customerPageOperator.CustomerPage(customer);
                     }
                     else if (LoginRegister == 2)
                     {

@@ -4,7 +4,7 @@ using DATABASE;
 namespace UI;
 public class CustomerPageOperator
 {
-    public void CustomerPage()
+    public void CustomerPage(Customer customer)
     {
         try
         {
@@ -55,6 +55,7 @@ public class CustomerPageOperator
                         System.Console.WriteLine("Godkänn Överföring /true/false");
                         break;
                     case 3:
+                    
                     System.Console.WriteLine("Typ av konto som skall öppnas");
                     System.Console.WriteLine("Sparande konto");
                     System.Console.WriteLine("Överföring konto");

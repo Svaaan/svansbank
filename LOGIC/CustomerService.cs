@@ -8,16 +8,20 @@ public class CustomerService : ICustomerService
     {
         _icustomerHandeler = icustomerHandeler;
     }
-    public Customer AddCustomer(Customer customer)
+    public void AddCustomer(Customer customer, BankAccount bankAccount)
     {
-        return customer;
+        _icustomerHandeler.AddCustomer(customer, bankAccount);
     }
-    public void GetCustomer(Customer customer)
+    public Customer GetCustomer(Customer customer)
     {
-       
-       if(customer.Id == customer.Id)
+      List <Customer> customers = _icustomerHandeler.GetCustomer();  
+      foreach (Customer item in customers)
+      {
+       if(item.Id == customer.Id)
        {
-          
-       }        
+          customer = item;
+       }  
+      }    
+      return customer;
     }
 }

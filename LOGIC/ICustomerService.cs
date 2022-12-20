@@ -3,6 +3,6 @@ using DATABASE;
 namespace LOGIC;
 public interface ICustomerService
 {
-    public Customer AddCustomer(Customer customer);
-    public void GetCustomer(Customer customer);
+    public void AddCustomer(Customer customer, BankAccount bankAccount);
+    public Customer GetCustomer(Customer customer);
 }
