@@ -2,7 +2,7 @@ using Dapper;
 using MySqlConnector;
 using TYPES;
 namespace DATABASE;
-class BankAccountDB : IBankAccountHandeler
+public class BankAccountDB : IBankAccountHandeler
 {
     public void CreateAccount(BankAccount bankAccount)
     {
@@ -18,7 +18,7 @@ class BankAccountDB : IBankAccountHandeler
     {
 
         List<BankAccount> getAccounts = new();
-        using MySqlConnection connection = new MySqlConnection($"Server = localhost; Database = svans_bank;Uid=rood;Pwd=;");
+        using MySqlConnection connection = new MySqlConnection($"Server = localhost; Database = svans_bank;Uid=root;Pwd=;");
         string query = "SELECT id AS 'Id', account_number AS 'AccountNumber', account_type AS 'AccountType', total_balance AS 'TotalBalance' FROM bank_account;";
         getAccounts = connection.Query<BankAccount>(query).ToList();
         return getAccounts;
@@ -28,15 +28,14 @@ class BankAccountDB : IBankAccountHandeler
     public List<BankAccount> PersonalBankAccounts(Customer customer)
     {
         List<BankAccount> getAccounts = new();
-        using MySqlConnection connection = new MySqlConnection($"Server = localhost; Database = svans_bank;Uid=rood;Pwd=;");
-        string query = "SELECT ba.id, ba.account_number, ba.account_type, ba.total_balance " +
+        using MySqlConnection connection = new MySqlConnection($"Server = localhost; Database = svans_bank;Uid=root;Pwd=;");
+        string query = "SELECT ba.id, ba.account_number as 'AccountNumber', ba.account_type as 'AccountType', ba.total_balance AS 'TotalBalance' " +
                         "FROM bank_account ba " +
                          "INNER JOIN customer_to_account cta " +
                         "ON ba.id = cta.bank_account_id " +
-                        "WHERE cta.customer_id = @id ";
-        getAccounts = connection.Query<BankAccount>(query).ToList();
+                        "WHERE cta.customer_id = @id; ";
+        getAccounts = connection.Query<BankAccount>(query, new{@id = customer.Id}).ToList();
         return getAccounts;
     }
-
 
 }

@@ -4,15 +4,15 @@ using DATABASE;
 namespace UI;
 public class CustomerPageOperator
 {
-    ICustomerService _icustomerService;
-    public CustomerPageOperator (ICustomerService iCustomerService)
+    ICustomerService _iCustomerService;
+    IBankAccountService _iBankAccountService;
+    public CustomerPageOperator (ICustomerService iCustomerService, IBankAccountService iBankAccountService)
     {
-        _icustomerService = iCustomerService;
+        _iBankAccountService = iBankAccountService;
+        _iCustomerService = iCustomerService;
     }
     public void CustomerPage(Customer customer)
     {
-        try
-        {
             decimal totalBalance = 0;
             int customerPage = 0;
             string answer = string.Empty;
@@ -23,6 +23,9 @@ public class CustomerPageOperator
         
             while (customerMainMenu)
             {
+                BankAccount transactionAccount = new();
+                // hämta saldot till transactionaccount til totalbalance
+                
                 System.Console.WriteLine("Ditt saldo: " + totalBalance);
                 System.Console.WriteLine("[1] Betala");
                 System.Console.WriteLine("[2] Överför egna konton");
@@ -92,9 +95,15 @@ public class CustomerPageOperator
                         break;
                     case 6:
                         //Hämta konto information ifrån GetCustomer. 
-                        customer = _icustomerService.GetCustomer(customer);
+                        customer = _iCustomerService.GetCustomer(customer);
                         
                         System.Console.WriteLine(customer.ToString());
+
+                        List<BankAccount> accounts = _iBankAccountService.GetAccounts(customer);
+                        foreach (BankAccount item in accounts)
+                        {
+                            System.Console.WriteLine(item.ToString());
+                        }
                         //Enbart 2 styck redigerar kan göras på telefon nr och mail.
                         // Resten av ändringar skall begäras till customer_Service
                         //Skapa felhantering i CreateAccount så enkla misstag ej skickas till DB.
@@ -104,11 +113,7 @@ public class CustomerPageOperator
             }
 
 
-        }
-        catch
-        {
-
-        }
+        
 
     }
 }

@@ -2,7 +2,7 @@ using TYPES;
 using DATABASE;
 namespace LOGIC;
 
-public class BankAccountService
+public class BankAccountService : IBankAccountService
 {
     IBankAccountHandeler _iBankAccountHandeler;
     public BankAccountService (IBankAccountHandeler iBankAccountHandeler)
@@ -15,6 +15,7 @@ public class BankAccountService
     }
     public List<BankAccount> GetAccounts(Customer customer)
     {
-        return new List<BankAccount>();
+        List<BankAccount> accounts = _iBankAccountHandeler.PersonalBankAccounts(customer);
+        return accounts;
     }
 }
