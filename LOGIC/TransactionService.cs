@@ -1,8 +1,13 @@
 using TYPES;
 using DATABASE;
-namespace LOGIK;
-class TransactionService
+namespace LOGIC;
+public class TransactionService
 {
+    ITransactionHandeler _iTransactionHandeler;
+    public TransactionService (ITransactionHandeler iTransactionHandeler)
+    {
+        _iTransactionHandeler = iTransactionHandeler;
+    }
     public void DepositToAccount(decimal Amount)
     {
         

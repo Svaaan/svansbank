@@ -5,7 +5,7 @@ using MySqlConnector;
 using TYPES;
 namespace DATABASE;
 
-class TransactionDB : ITransactionHandeler
+public class TransactionDB : ITransactionHandeler
 {
     public void CreateWithdrawalTransaction(Transactions transaction)
     {

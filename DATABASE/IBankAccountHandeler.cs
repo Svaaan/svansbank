@@ -6,6 +6,8 @@ public interface IBankAccountHandeler
 {
     public void CreateAccount(BankAccount bankAccount);
 
-    public List <BankAccount> GetBankAccounts (BankAccount bankAccount);
+    public List <BankAccount> GetBankAccounts ();
+
+    public List<BankAccount> PersonalBankAccounts(Customer customer);
   
 }

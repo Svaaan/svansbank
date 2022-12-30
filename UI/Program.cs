@@ -7,6 +7,8 @@ internal class Program
 {
     private static void Main(string[] args)
     {
+        TransactionService transactionsService = new(new TransactionDB());
+        CustomerService customerService = new(new CustomerDB());
         LoginService loginService = new(new CustomerDB());
         RegistrationService registrationService = new(new CustomerDB());
         CreateAccountOperator createAccountOperator = new(registrationService);
@@ -49,7 +51,7 @@ internal class Program
                     } while (LoginRegister < 1 || LoginRegister > 2);
                     if (LoginRegister == 1)
                     {
-                        CustomerPageOperator customerPageOperator = new();
+                        CustomerPageOperator customerPageOperator = new (customerService);
                         System.Console.WriteLine("Epost adress: ");
                         string email = Console.ReadLine();
                         System.Console.WriteLine("Lösenord: ");

@@ -17,5 +17,9 @@ public class Transactions
         Amount = amount;
         TransationDate = DateTime.Now;
     }
+    public override string ToString()
+    {
+        return $"{Amount}";
+    }
     //Filura på om du ska separera eller ha en egen table för withdrawals, deposits, payments för enskild id tracking;
 }
