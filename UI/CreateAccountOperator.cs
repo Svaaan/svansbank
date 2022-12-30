@@ -47,7 +47,7 @@ public class CreateAccountOperator
                 customer1.BankId = 1;
 
                 bankAccount1.AccountType = "Transaktionskonto";
-                bankAccount1.AccountNumber = RandomNumberGenerator();
+                bankAccount1.AccountNumber = Tools.RandomNumberGenerator();
                 bankAccount1.TotalBalance = 0;
                 _iRegistrationService.CreateCustomerAccount(customer1, bankAccount1);
                 Console.WriteLine("Välkommen som kund hos svan's bank ditt konto är nu registrerat");
@@ -59,16 +59,5 @@ public class CreateAccountOperator
             Console.WriteLine(e.Message);
         }
     }
-    public static string RandomNumberGenerator()
-    {
-         Random random = new Random();
-         int randomNumber = random.Next(10000, 99999);
-
-         Random random1 = new Random();
-         int randomNumber1 = random.Next(1000, 9999);
-
-         string accountNumber = (randomNumber + "-" + randomNumber1);
-
-         return accountNumber;
-    }
+   
 }
