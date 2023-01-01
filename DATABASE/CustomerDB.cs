@@ -22,7 +22,7 @@ public class CustomerDB : IcustomerHandeler
             "VALUES (@accountNumber, @AccountType, @TotalBalance); " +
             "SET @bank_account_id := LAST_INSERT_ID(); " +
             "INSERT INTO customer_to_account(bank_account_id, customer_id) " +
-            "VALUES (@bank_account_id,customer_id);COMMIT;";
+            "VALUES (@bank_account_id,@customer_id);COMMIT;";
             rows = connection.ExecuteScalar<int>(query, new{@Name = customer.Name, @LastName = customer.LastName, @PersonalNumber = customer.PersonalNumber,@Mail = customer.Mail,@PhoneNumber = customer.PhoneNumber, @City = customer.City, @StreetAdress = customer.StreetAdress, @StreetNumber = customer.StreetNumber, @PostalNumber = customer.PostalNumber, @PassWord = customer.PassWord,@BankId = @customer.BankId, @AccountType = bankAccount.AccountType, @AccountNumber = bankAccount.AccountNumber, @TotalBalance = bankAccount.TotalBalance});
             return rows;
         }

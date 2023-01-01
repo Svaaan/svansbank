@@ -4,16 +4,16 @@ using TYPES;
 namespace DATABASE;
 public class BankAccountDB : IBankAccountHandeler
 {
-    public void CreateAccount(BankAccount bankAccount)
+    public void CreateAccount(BankAccount bankAccount, Customer customer)
     {
-        using MySqlConnection connection = new MySqlConnection($"Server = localhost; Database = svans_bank;Uid=rood;Pwd=;");
+        using MySqlConnection connection = new MySqlConnection($"Server = localhost; Database = svans_bank;Uid=root;Pwd=;Allow User Variables=true;");
         string query = "START TRANSACTION; INSERT INTO bank_account (account_number, account_type, total_balance) " +
-        " VALUES (@accountNumber, @AccountType, @TotalBalance); " +
+        " VALUES (@AccountNumber, @AccountType, @TotalBalance); " +
         "SET @bank_account_id := LAST_INSERT_ID(); " +
         "INSERT INTO customer_to_account(bank_account_id, customer_id) " +
-        "VALUES (@bank_account_id, );COMMIT;";
-        connection.ExecuteScalar(query, param: bankAccount);
-    }
+        "VALUES (@bank_account_id, @Id);COMMIT;";
+        connection.ExecuteScalar(query, new{@AccountNumber = bankAccount.AccountNumber, @AccountType = bankAccount.AccountType, @TotalBalance = bankAccount.TotalBalance, @Id = customer.Id });
+    } 
     public List<BankAccount> GetBankAccounts()
     {
 

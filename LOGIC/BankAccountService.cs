@@ -9,13 +9,14 @@ public class BankAccountService : IBankAccountService
     {
         _iBankAccountHandeler = iBankAccountHandeler;
     }
-    public void NewAccount()
+    public void NewAccount(Customer customer, BankAccount bankAccount)
     {
-
+        _iBankAccountHandeler.CreateAccount(bankAccount, customer);
     }
     public List<BankAccount> GetAccounts(Customer customer)
     {
         List<BankAccount> accounts = _iBankAccountHandeler.PersonalBankAccounts(customer);
         return accounts;
     }
+    
 }

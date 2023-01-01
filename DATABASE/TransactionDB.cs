@@ -24,6 +24,4 @@ public class TransactionDB : ITransactionHandeler
         string query = "SELECT transactions.amount, transactions_type.name FROM transactions INNER JOIN transactions_type ON transactions_type.id = transactions.transactions_type_id;";
 
     }
-
-    
 }

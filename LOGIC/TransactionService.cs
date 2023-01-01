@@ -1,7 +1,7 @@
 using TYPES;
 using DATABASE;
 namespace LOGIC;
-public class TransactionService
+public class TransactionService : ITransactionService
 {
     ITransactionHandeler _iTransactionHandeler;
     public TransactionService (ITransactionHandeler iTransactionHandeler)

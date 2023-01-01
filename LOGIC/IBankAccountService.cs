@@ -5,5 +5,8 @@ public interface IBankAccountService
 {
     public List<BankAccount> GetAccounts(Customer customer);
 
-    public void NewAccount();
+
+
+     public void NewAccount(Customer customer, BankAccount bankAccount);
+
 }

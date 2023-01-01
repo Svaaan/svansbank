@@ -4,7 +4,7 @@ using TYPES;
 namespace DATABASE;
 public interface IBankAccountHandeler
 {
-    public void CreateAccount(BankAccount bankAccount);
+    public void CreateAccount(BankAccount bankAccount, Customer customer);
 
     public List <BankAccount> GetBankAccounts ();
 
