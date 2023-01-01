@@ -17,7 +17,7 @@ public class Tools
     public static string EmployeeRandomNumberGenerator ()
     {
         Random random = new Random();
-        int randomEmployeeNumber = random.Next(10000,99999);
+        int randomEmployeeNumber = random.Next(10000, 99999);
 
         string employeeNumber = (randomEmployeeNumber.ToString());
 

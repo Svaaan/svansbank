@@ -6,10 +6,12 @@ public class CustomerPageOperator
 {
     ICustomerService _iCustomerService;
     IBankAccountService _iBankAccountService;
-    public CustomerPageOperator(ICustomerService iCustomerService, IBankAccountService iBankAccountService)
+    ITransactionService _iTransactionService;
+    public CustomerPageOperator(ICustomerService iCustomerService, IBankAccountService iBankAccountService, ITransactionService iTransactionService)
     {
         _iBankAccountService = iBankAccountService;
         _iCustomerService = iCustomerService;
+        _iTransactionService = iTransactionService;
     }
     public void CustomerPage(Customer customer)
     {
@@ -48,20 +50,9 @@ public class CustomerPageOperator
                 case 1:
 
 
-                    System.Console.WriteLine("Tryck på q för att avbryta och återgå till startmenyn");
-                    System.Console.WriteLine("Från konto: "); //Finns det fler konton Får det adderas
-                    answer = Console.ReadLine();
-                    System.Console.WriteLine("Till konto: ");
-                    answer = Console.ReadLine();
-                    System.Console.WriteLine("Belopp: ");
-                    amount = decimal.Parse(Console.ReadLine());
-                    System.Console.WriteLine("Översikt");
-                    System.Console.WriteLine("Skapa en överblick av valda inskrivna alternativ innan godkännande");
-                    System.Console.WriteLine("Godkänn Överföring /true/false");
-
-
+                TransactionOperator transactionOperator = new(_iTransactionService, _iBankAccountService);
+                transactionOperator.MakeWithdrawal(customer);
                     //If true begär transaktion
-
                     break;
                 case 2:
                     System.Console.WriteLine("Från konto");

@@ -9,13 +9,13 @@ public class Transactions
     public int CustomerId{get;set;}
     public int BankAccountId{get;set;}
     public decimal Amount {get; set;}
-    public DateTime TransationDate{get;set;}
+    public DateTime TransactionDate{get;set;}
 
-    public Transactions(decimal amount)
+    public Transactions(int bankAccountId, decimal amount)
     {
-        
+        BankAccountId = bankAccountId;
         Amount = amount;
-        TransationDate = DateTime.Now;
+        TransactionDate = DateTime.Now;
     }
     public override string ToString()
     {

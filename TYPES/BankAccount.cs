@@ -19,7 +19,7 @@ public class BankAccount
     }
     public override string ToString()
     {
-        return $"{AccountType}\n{AccountNumber}\n{TotalBalance}";
+        return $"[{Id}] {AccountType}\n{AccountNumber}\n{TotalBalance}";
     }
 
 }

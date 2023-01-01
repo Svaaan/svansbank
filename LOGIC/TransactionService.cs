@@ -8,7 +8,12 @@ public class TransactionService : ITransactionService
     {
         _iTransactionHandeler = iTransactionHandeler;
     }
-    public void DepositToAccount(decimal Amount)
+    public void WithdrawFromAccount(Transactions transactions)
+    {
+        _iTransactionHandeler.CreateWithdrawalTransaction(transactions);
+
+    }
+    public void DepositToAccount(Transactions transactions)
     {
         
     }
