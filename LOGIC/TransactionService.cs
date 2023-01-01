@@ -10,7 +10,7 @@ public class TransactionService : ITransactionService
     }
     public void WithdrawFromAccount(Transactions transactions)
     {
-        _iTransactionHandeler.CreateWithdrawalTransaction(transactions);
+        _iTransactionHandeler.CreateInternalTransaction(transactions);
 
     }
     public void DepositToAccount(Transactions transactions)

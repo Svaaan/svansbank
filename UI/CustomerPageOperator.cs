@@ -27,7 +27,7 @@ public class CustomerPageOperator
         {
             BankAccount transactionAccount = new();
             // hämta saldot till transactionaccount til totalbalance
-
+            totalBalance = _iBankAccountService.GetTotalBalance(customer).TotalBalance;
             System.Console.WriteLine("Ditt saldo: " + totalBalance);
             System.Console.WriteLine("[1] Betala");
             System.Console.WriteLine("[2] Överför egna konton");
@@ -49,24 +49,14 @@ public class CustomerPageOperator
             {
                 case 1:
 
-
-                TransactionOperator transactionOperator = new(_iTransactionService, _iBankAccountService);
-                transactionOperator.MakeWithdrawal(customer);
                     //If true begär transaktion
                     break;
                 case 2:
-                    System.Console.WriteLine("Från konto");
-                    answer = Console.ReadLine();
-                    System.Console.WriteLine("Till konto");
-                    answer = Console.ReadLine();
-                    System.Console.WriteLine("Belopp");
-                    amount = decimal.Parse(Console.ReadLine());
-                    System.Console.WriteLine("Översikt");
-                    System.Console.WriteLine("Skapa en överblick av valda inskrivna alternativ innan godkännande");
-                    System.Console.WriteLine("Godkänn Överföring /true/false");
+                    TransactionOperator transactionOperator = new(_iTransactionService, _iBankAccountService);
+                    transactionOperator.MakeWithdrawal(customer);
                     break;
                 case 3:
-                  NewBankAccount(customer);
+                    NewBankAccount(customer);
                     break;
                 case 4:
                     //Rad olika förfrågningar som krävs för att godkänna lån

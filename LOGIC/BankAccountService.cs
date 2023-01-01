@@ -5,7 +5,7 @@ namespace LOGIC;
 public class BankAccountService : IBankAccountService
 {
     IBankAccountHandeler _iBankAccountHandeler;
-    public BankAccountService (IBankAccountHandeler iBankAccountHandeler)
+    public BankAccountService(IBankAccountHandeler iBankAccountHandeler)
     {
         _iBankAccountHandeler = iBankAccountHandeler;
     }
@@ -18,5 +18,19 @@ public class BankAccountService : IBankAccountService
         List<BankAccount> accounts = _iBankAccountHandeler.PersonalBankAccounts(customer);
         return accounts;
     }
-    
+
+    public BankAccount GetTotalBalance(Customer customer)
+    {
+        List<BankAccount> accounts = _iBankAccountHandeler.PersonalBankAccounts(customer);
+        BankAccount bankAccount = new();
+        foreach (BankAccount item in accounts)
+        {
+            if (item.AccountType == "Transaktionskonto")
+            {
+                bankAccount = item;
+            }
+        }
+        return bankAccount;
+    }
+
 }

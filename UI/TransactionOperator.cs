@@ -18,20 +18,27 @@ public class TransactionOperator
             System.Console.WriteLine(item.ToString());
         }
         bool success = false;
-        int bankAccountId = 0;
+        int fromBankAccountId = 0;
         do
         {
-            Console.WriteLine("Välj konto: ");
-            success = int.TryParse(Console.ReadLine(), out bankAccountId);
-        }while(!success);
+            Console.WriteLine("Från konto: ");
+            success = int.TryParse(Console.ReadLine(), out fromBankAccountId);
+        } while (!success);
 
-         decimal amount = 0;
+        int toBankAccountId = 0;
+        do
+        {
+            Console.WriteLine("Till konto: ");
+            success = int.TryParse(Console.ReadLine(), out toBankAccountId);
+        } while (!success);
+
+        decimal amount = 0;
         do
         {
             Console.WriteLine("Belopp: ");
             success = decimal.TryParse(Console.ReadLine(), out amount);
-        }while(!success);
-        Transactions transactions = new(bankAccountId, amount);
+        } while (!success);
+        Transactions transactions = new(fromBankAccountId, toBankAccountId, amount);
         _iTransactionService.WithdrawFromAccount(transactions);
     }
 }
