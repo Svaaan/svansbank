@@ -9,4 +9,9 @@ public class EmployeeService
     {
         _IemployeeHandeler = Iemployeehandeler;
     }
+
+    public void AddEmployee(Employee employee)
+    {
+        _IemployeeHandeler.AddEmployee(employee);
+    }
 }

@@ -2,10 +2,11 @@ using Dapper;
 using MySqlConnector;
 using TYPES;
 namespace DATABASE;
-public class EmployeeDB
+public class EmployeeDB : IEmployeeHandeler
 {
     //int EmployementNumber, string Name, 
     //string LastName, string Email
+    
 
     public int AddEmployee(Employee employee)
     {

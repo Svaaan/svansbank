@@ -108,7 +108,7 @@ public class CustomerPageOperator
 
     public void NewBankAccount(Customer customer)
     {
-        BankAccount newAccount = new(Tools.RandomNumberGenerator(), "Sparkonto", 0);
+        BankAccount newAccount = new(Tools.BankAccountRandomNumberGenerator(), "Sparkonto", 0);
         _iBankAccountService.NewAccount(customer, newAccount);
 
         System.Console.WriteLine("Sparkonto skapats\n" + newAccount.ToString());

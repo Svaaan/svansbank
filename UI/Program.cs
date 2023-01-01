@@ -14,6 +14,8 @@ internal class Program
         RegistrationService registrationService = new(new CustomerDB());
         CreateAccountOperator createAccountOperator = new(registrationService);
         BankService bankService = new(new BankDB());
+        EmployeeService employeeService = new(new EmployeeDB());
+        
 
 
         int LoginRegister = 0;
