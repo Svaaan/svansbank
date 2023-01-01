@@ -4,5 +4,5 @@ using TYPES;
 namespace DATABASE;
 public interface IBankHandeler
 {
-    public int AddOffice();
+    public List<BankOffice> GetOffices();
 }

@@ -13,6 +13,7 @@ internal class Program
         LoginService loginService = new(new CustomerDB());
         RegistrationService registrationService = new(new CustomerDB());
         CreateAccountOperator createAccountOperator = new(registrationService);
+        BankService bankService = new(new BankDB());
 
 
         int LoginRegister = 0;
@@ -77,12 +78,8 @@ internal class Program
                     }
 
                     break;
-
-
                 case 3:
-
-                    System.Console.WriteLine("Svan's bank startade pga att jag var tvungen att komma på något och det var ett tag sen jag arbeta med siffror.");
-
+                bankService.ShowOffice();
                     break;
 
             }

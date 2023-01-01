@@ -2,18 +2,16 @@ using Dapper;
 using MySqlConnector;
 using TYPES;
 namespace DATABASE;
-class BankDB : IBankHandeler
+public class BankDB : IBankHandeler
 {
-    public List <BankDB> BankOffices = new();
-
-     public int AddOffice()
+    public List<BankOffice> GetOffices()
     {
-        using (MySqlConnection connection = new MySqlConnection($"Server = localhost; Database = svans_bank;Uid=rood;Pwd=;"))
+        using (MySqlConnection connection = new MySqlConnection($"Server = localhost; Database = svans_bank;Uid=root;Pwd=;"))
         {
-            int rows = 0;
-            string query = "INSERT INTO customer(name,location, street_adress, street_number, postal_number)VALUES(@Name,@Location, @StreetAdress, @StreetNumber, @PostalNumber);";
-            rows = connection.ExecuteScalar<int>(query, param: BankOffices);
-            return rows;
+            
+            string query = "SELECT id AS 'BankId', name AS 'BankName', location AS 'BankLocation', street_adress AS 'BankStreetAdress', street_number AS 'BankStreetNumber', postal_number AS 'BankPostalNumber' FROM bank;";
+            List<BankOffice> bankOffices = connection.Query<BankOffice>(query).ToList();
+            return bankOffices;
         }
     }
     
