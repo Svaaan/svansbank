@@ -12,6 +12,7 @@ public class TransactionOperator
     }
     public void MakeWithdrawal(Customer customer)
     {
+        
         List<BankAccount> accounts = _iBankAccountService.GetAccounts(customer);
         foreach (BankAccount item in accounts)
         {

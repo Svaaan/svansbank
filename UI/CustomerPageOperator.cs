@@ -35,6 +35,7 @@ public class CustomerPageOperator
             System.Console.WriteLine("[4] Förfråga lån");
             System.Console.WriteLine("[5] Översikt mina transaktioner");
             System.Console.WriteLine("[6] KontoInformation");
+            System.Console.WriteLine("[7] Logga ut");
 
             answer = Console.ReadLine();
 
@@ -82,6 +83,10 @@ public class CustomerPageOperator
                     // Resten av ändringar skall begäras till customer_Service
                     //Skapa felhantering i CreateAccount så enkla misstag ej skickas till DB.
                     break;
+                    case 7:
+                    Environment.Exit(4);
+                    break;
+
 
             }
         }

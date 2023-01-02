@@ -16,13 +16,6 @@ public class TransactionDB : ITransactionHandeler
         "VALUES (@TransactionDate,@FromBankAccountId, @ToBankAccountId, @Amount, 4);" + 
         "COMMIT;";
         connection.ExecuteScalar(query, param : transaction);
-        
-        // string query = "START TRANSACTION; " +
-        // "INSERT INTO transactions(customer_id, date_transaction, bank_account_id, amount) "+
-        // "VALUES (@CustomerId,@TransactionDate,@BankAccountId,@Amount); " +
-        // "UPDATE bank_account SET total_balance = total_balance - @Amount " +
-        // "WHERE id = @BankAccountId; " + //där aktuella bank_account_idt är ..
-        // "COMMIT; ";
     }
     public void GetTransaction (Transactions transactions)
     {
