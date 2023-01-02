@@ -19,7 +19,7 @@ public class BankAccountService : IBankAccountService
         return accounts;
     }
 
-    public BankAccount GetTotalBalance(Customer customer)
+    public BankAccount GetTransactionsAccount(Customer customer)
     {
         List<BankAccount> accounts = _iBankAccountHandeler.PersonalBankAccounts(customer);
         BankAccount bankAccount = new();

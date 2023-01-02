@@ -42,4 +42,12 @@ public class TransactionOperator
         Transactions transactions = new(fromBankAccountId, toBankAccountId, amount);
         _iTransactionService.WithdrawFromAccount(transactions);
     }
+    public void ShowTransactions(int bankId)
+    {
+        List<Transactions> myTransactions = _iTransactionService.GetTransactions(bankId);
+        foreach (Transactions item in myTransactions)
+        {
+            System.Console.WriteLine(item.WithdrawalString());
+        }
+    }
 }

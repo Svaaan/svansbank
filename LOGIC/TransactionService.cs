@@ -17,4 +17,8 @@ public class TransactionService : ITransactionService
     {
         
     }
+    public List <Transactions> GetTransactions (int bankId)
+    {
+        return _iTransactionHandeler.GetTransactions(bankId);
+    }
 }

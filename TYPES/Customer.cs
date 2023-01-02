@@ -13,18 +13,18 @@ public class Customer
     public int PostalNumber {get; set;}
     public string PassWord {get; set;}
     public int BankId {get; set;}
-    public Customer (string Name, string LastName, string PersonalNumber, string Mail, string PhoneNumber, string City, string StreetAdress, int StreetNumber, int PostalNumber, string PassWord)
+    public Customer (string name, string lastName, string personalNumber, string mail, string phoneNumber, string city, string streetAdress, int streetNumber, int postalNumber, string passWord)
     {
-        this.Name = Name;
-        this.LastName = LastName;
-        this.PersonalNumber = PersonalNumber;
-        this.Mail = Mail;
-        this.PhoneNumber = PhoneNumber;
-        this.City = City;
-        this.StreetAdress = StreetAdress;
-        this.StreetNumber = StreetNumber;
-        this.PostalNumber = PostalNumber;
-        this.PassWord = PassWord;
+        this.Name = name;
+        this.LastName = lastName;
+        this.PersonalNumber = personalNumber;
+        this.Mail = mail;
+        this.PhoneNumber = phoneNumber;
+        this.City = city;
+        this.StreetAdress = streetAdress;
+        this.StreetNumber = streetNumber;
+        this.PostalNumber = postalNumber;
+        this.PassWord = passWord;
 
     }
     public Customer ()

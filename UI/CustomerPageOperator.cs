@@ -27,7 +27,7 @@ public class CustomerPageOperator
         {
             BankAccount transactionAccount = new();
             // hämta saldot till transactionaccount til totalbalance
-            totalBalance = _iBankAccountService.GetTotalBalance(customer).TotalBalance;
+            totalBalance = _iBankAccountService.GetTransactionsAccount(customer).TotalBalance;
             System.Console.WriteLine("Ditt saldo: " + totalBalance);
             System.Console.WriteLine("[1] Betala");
             System.Console.WriteLine("[2] Överför egna konton");
@@ -66,7 +66,9 @@ public class CustomerPageOperator
                     System.Console.WriteLine();
                     break;
                 case 5:
-                    //Behöver göra separata statiska metoder för 4 och och 5.
+                    int bankAccountId = _iBankAccountService.GetTransactionsAccount(customer).Id;
+                    transactionOperator = new(_iTransactionService, _iBankAccountService);
+                    transactionOperator.ShowTransactions(bankAccountId);
                     break;
                 case 6:
                     //Hämta konto information ifrån GetCustomer. 
@@ -83,7 +85,7 @@ public class CustomerPageOperator
                     // Resten av ändringar skall begäras till customer_Service
                     //Skapa felhantering i CreateAccount så enkla misstag ej skickas till DB.
                     break;
-                    case 7:
+                case 7:
                     Environment.Exit(4);
                     break;
 

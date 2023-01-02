@@ -6,7 +6,7 @@ public interface ITransactionHandeler
 {
     public void CreateInternalTransaction(Transactions transaction);
 
-    public void GetTransaction (Transactions transactions);
+    public List<Transactions> GetTransactions(int bankId);
 
-    
+    public int CountTransactions ();
 }

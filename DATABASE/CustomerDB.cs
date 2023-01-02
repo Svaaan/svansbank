@@ -61,23 +61,23 @@ public class CustomerDB : IcustomerHandeler
         }
         return rows;
     }
-     public int UpdatePhoneNumber(Customer customer, string PhoneNumber)
+     public int UpdatePhoneNumber(Customer customer, string phoneNumber)
     {
         int rows = 0;
         using (MySqlConnection connection = new MySqlConnection($"Server=localhost;Database=Svans_bank;Uid=root;Pwd=;"))
         {
             string query = "UPDATE customer SET phone_number = @PhoneNumber WHERE id = @id";
-            rows = connection.ExecuteScalar<int>(query, param: new { @phone_number = PhoneNumber, @id = customer.Id });
+            rows = connection.ExecuteScalar<int>(query, param: new { @phone_number = phoneNumber, @id = customer.Id });
         }
         return rows;
     }
-    public int UpdatePassWord(Customer customer, string PassWord)
+    public int UpdatePassWord(Customer customer, string passWord)
     {
         int rows = 0;
         using (MySqlConnection connection = new MySqlConnection($"Server=localhost;Database=Svans_bank;Uid=root;Pwd=;"))
         {
             string query = "UPDATE customer SET pass_word = @PassWord WHERE id = @id";
-            rows = connection.ExecuteScalar<int>(query, param: new { @pass_word = PassWord, @id = customer.Id });
+            rows = connection.ExecuteScalar<int>(query, param: new { @pass_word = passWord, @id = customer.Id });
         }
         return rows;
     }
