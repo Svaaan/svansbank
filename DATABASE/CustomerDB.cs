@@ -27,6 +27,7 @@ public class CustomerDB : IcustomerHandeler
             return rows;
         }
     }
+     
     public List<Customer> GetCustomer()
     {
         List<Customer> getCustomer = new();
@@ -50,6 +51,37 @@ public class CustomerDB : IcustomerHandeler
             return customer;
         }
     }
+     public int UpdateEmail(Customer customer, string Email)
+    {
+        int rows = 0;
+        using (MySqlConnection connection = new MySqlConnection($"Server=localhost;Database=Svans_bank;Uid=root;Pwd=;"))
+        {
+            string query = "UPDATE customer SET email = @Email WHERE id = @id";
+            rows = connection.ExecuteScalar<int>(query, param: new { @email= Email, @id = customer.Id });
+        }
+        return rows;
+    }
+     public int UpdatePhoneNumber(Customer customer, string PhoneNumber)
+    {
+        int rows = 0;
+        using (MySqlConnection connection = new MySqlConnection($"Server=localhost;Database=Svans_bank;Uid=root;Pwd=;"))
+        {
+            string query = "UPDATE customer SET phone_number = @PhoneNumber WHERE id = @id";
+            rows = connection.ExecuteScalar<int>(query, param: new { @phone_number = PhoneNumber, @id = customer.Id });
+        }
+        return rows;
+    }
+    public int UpdatePassWord(Customer customer, string PassWord)
+    {
+        int rows = 0;
+        using (MySqlConnection connection = new MySqlConnection($"Server=localhost;Database=Svans_bank;Uid=root;Pwd=;"))
+        {
+            string query = "UPDATE customer SET pass_word = @PassWord WHERE id = @id";
+            rows = connection.ExecuteScalar<int>(query, param: new { @pass_word = PassWord, @id = customer.Id });
+        }
+        return rows;
+    }
+
 
 
 
