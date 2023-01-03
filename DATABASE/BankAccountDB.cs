@@ -4,7 +4,7 @@ using TYPES;
 namespace DATABASE;
 public class BankAccountDB : IBankAccountHandeler
 {
-    public void CreateAccount(BankAccount bankAccount, Customer customer)
+    public void CreateBankAccount(BankAccount bankAccount, Customer customer)
     {
         using MySqlConnection connection = new MySqlConnection($"Server = localhost; Database = svans_bank;Uid=root;Pwd=;Allow User Variables=true;");
         string query = "START TRANSACTION; INSERT INTO bank_account (account_number, account_type, total_balance) " +
@@ -14,17 +14,7 @@ public class BankAccountDB : IBankAccountHandeler
         "VALUES (@bank_account_id, @Id);COMMIT;";
         connection.ExecuteScalar(query, new{@AccountNumber = bankAccount.AccountNumber, @AccountType = bankAccount.AccountType, @TotalBalance = bankAccount.TotalBalance, @Id = customer.Id });
     } 
-    public List<BankAccount> GetBankAccounts()
-    {
-
-        List<BankAccount> getAccounts = new();
-        using MySqlConnection connection = new MySqlConnection($"Server = localhost; Database = svans_bank;Uid=root;Pwd=;");
-        string query = "SELECT id AS 'Id', account_number AS 'AccountNumber', account_type AS 'AccountType', total_balance AS 'TotalBalance' FROM bank_account;";
-        getAccounts = connection.Query<BankAccount>(query).ToList();
-        return getAccounts;
-    }
-    //INSERT INTO `customer_account`(`bank_account_id`, `customer_id`) VALUES (1,1)
-    //START TRANSACTION;
+   
     public List<BankAccount> PersonalBankAccounts(Customer customer)
     {
         List<BankAccount> getAccounts = new();

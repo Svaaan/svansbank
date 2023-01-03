@@ -1,0 +1,373 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
+--
+-- Värd: 127.0.0.1
+-- Tid vid skapande: 03 jan 2023 kl 17:22
+-- Serverversion: 10.4.25-MariaDB
+-- PHP-version: 8.1.10
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Databas: `svans_bank`
+--
+
+DELIMITER $$
+--
+-- Procedurer
+--
+CREATE DEFINER=`root`@`localhost` PROCEDURE `withdraw` (IN `fromAccountId` INT, IN `withdrawAmount` DECIMAL, IN `toAccountId` INT)   BEGIN
+IF withdrawAmount <= 0 THEN
+SIGNAL SQLSTATE '45000'
+SET MESSAGE_TEXT = 'Withdraw cannot be zero or less.';
+END IF;
+UPDATE bank_account
+SET total_balance = total_balance - withdrawAmount
+WHERE id = fromAccountId;
+UPDATE bank_account 
+SET total_balance = total_balance + withdrawAmount
+WHERE id = toAccountId;
+
+END$$
+
+DELIMITER ;
+
+-- --------------------------------------------------------
+
+--
+-- Tabellstruktur `bank`
+--
+
+CREATE TABLE `bank` (
+  `id` int(11) NOT NULL,
+  `name` varchar(20) DEFAULT NULL,
+  `location` varchar(35) DEFAULT NULL,
+  `street_adress` varchar(50) DEFAULT NULL,
+  `street_number` int(11) DEFAULT NULL,
+  `postal_number` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumpning av Data i tabell `bank`
+--
+
+INSERT INTO `bank` (`id`, `name`, `location`, `street_adress`, `street_number`, `postal_number`) VALUES
+(1, 'Svans Bank', 'Borås', 'Guldbrandsgatan', 2, 50606);
+
+-- --------------------------------------------------------
+
+--
+-- Tabellstruktur `bank_account`
+--
+
+CREATE TABLE `bank_account` (
+  `id` int(11) NOT NULL,
+  `account_number` varchar(10) DEFAULT NULL,
+  `account_type` varchar(30) DEFAULT NULL,
+  `total_balance` decimal(11,0) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumpning av Data i tabell `bank_account`
+--
+
+INSERT INTO `bank_account` (`id`, `account_number`, `account_type`, `total_balance`) VALUES
+(6, '40017-3431', 'Transaktionskonto', '99888'),
+(7, '27324-6627', 'Sparkonto', '0'),
+(8, '81225-6073', 'Transaktionskonto', '0'),
+(9, '62802-2220', 'Sparkonto', '0');
+
+-- --------------------------------------------------------
+
+--
+-- Tabellstruktur `customer`
+--
+
+CREATE TABLE `customer` (
+  `id` int(11) NOT NULL,
+  `name` varchar(25) DEFAULT NULL,
+  `last_name` varchar(25) DEFAULT NULL,
+  `personal_number` varchar(12) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `phone_number` varchar(15) DEFAULT NULL,
+  `city` varchar(50) DEFAULT NULL,
+  `street_adress` varchar(50) DEFAULT NULL,
+  `street_number` int(11) DEFAULT NULL,
+  `postal_number` int(11) DEFAULT NULL,
+  `bank_id` int(11) DEFAULT NULL,
+  `pass_word` varchar(25) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumpning av Data i tabell `customer`
+--
+
+INSERT INTO `customer` (`id`, `name`, `last_name`, `personal_number`, `email`, `phone_number`, `city`, `street_adress`, `street_number`, `postal_number`, `bank_id`, `pass_word`) VALUES
+(5, 'Bella', 'Svan', '201909256666', 'bella@live.se', NULL, 'Borås', 'tå', 6, 50483, 1, '123'),
+(6, 'Angie', 'Von oxnacke', '197698880000', 'oxnacke@gmail.com', NULL, 'stockolm', 'SKÄRGÅRDEN', 69, 66666, 1, 'jagärrik');
+
+-- --------------------------------------------------------
+
+--
+-- Tabellstruktur `customer_to_account`
+--
+
+CREATE TABLE `customer_to_account` (
+  `id` int(11) NOT NULL,
+  `customer_id` int(11) DEFAULT NULL,
+  `bank_account_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumpning av Data i tabell `customer_to_account`
+--
+
+INSERT INTO `customer_to_account` (`id`, `customer_id`, `bank_account_id`) VALUES
+(5, 5, 6),
+(6, 5, 7),
+(7, 6, 8),
+(8, 6, 9);
+
+-- --------------------------------------------------------
+
+--
+-- Tabellstruktur `employee_login`
+--
+
+CREATE TABLE `employee_login` (
+  `id` int(11) NOT NULL,
+  `employment_number` int(11) DEFAULT NULL,
+  `name` varchar(25) DEFAULT NULL,
+  `last_name` varchar(25) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `bank_id` int(11) DEFAULT NULL,
+  `pass_word` varchar(30) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumpning av Data i tabell `employee_login`
+--
+
+INSERT INTO `employee_login` (`id`, `employment_number`, `name`, `last_name`, `email`, `bank_id`, `pass_word`) VALUES
+(1, 12345, 'Daniel', 'Svan', 'daniel@svansbank.com', NULL, '123');
+
+-- --------------------------------------------------------
+
+--
+-- Tabellstruktur `loan`
+--
+
+CREATE TABLE `loan` (
+  `id` int(11) NOT NULL,
+  `customer_id` int(11) DEFAULT NULL,
+  `total_amount` decimal(10,0) DEFAULT NULL,
+  `interest_type` varchar(30) DEFAULT NULL,
+  `monthly_payback` decimal(9,0) DEFAULT NULL,
+  `date_loan` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Tabellstruktur `transactions`
+--
+
+CREATE TABLE `transactions` (
+  `id` int(11) NOT NULL,
+  `date_transaction` datetime DEFAULT NULL,
+  `from_bank_account_id` int(11) DEFAULT NULL,
+  `amount` decimal(10,0) DEFAULT NULL,
+  `transactions_type_id` int(11) DEFAULT NULL,
+  `to_bank_account_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumpning av Data i tabell `transactions`
+--
+
+INSERT INTO `transactions` (`id`, `date_transaction`, `from_bank_account_id`, `amount`, `transactions_type_id`, `to_bank_account_id`) VALUES
+(17, '2023-01-01 21:07:09', 6, '5000', 4, 7),
+(18, '2023-01-01 21:11:02', 6, '100', 4, 7),
+(19, '2023-01-03 13:04:48', 7, '100', 4, 7),
+(20, '2023-01-03 13:05:53', 7, '100', 4, 6);
+
+-- --------------------------------------------------------
+
+--
+-- Tabellstruktur `transactions_type`
+--
+
+CREATE TABLE `transactions_type` (
+  `id` int(11) NOT NULL,
+  `name` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumpning av Data i tabell `transactions_type`
+--
+
+INSERT INTO `transactions_type` (`id`, `name`) VALUES
+(1, 'deposit'),
+(2, 'withdrawal'),
+(3, 'payment'),
+(4, 'internal_transfer');
+
+--
+-- Index för dumpade tabeller
+--
+
+--
+-- Index för tabell `bank`
+--
+ALTER TABLE `bank`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index för tabell `bank_account`
+--
+ALTER TABLE `bank_account`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index för tabell `customer`
+--
+ALTER TABLE `customer`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `bank_id` (`bank_id`);
+
+--
+-- Index för tabell `customer_to_account`
+--
+ALTER TABLE `customer_to_account`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `customer_id` (`customer_id`),
+  ADD KEY `bank_account_id` (`bank_account_id`);
+
+--
+-- Index för tabell `employee_login`
+--
+ALTER TABLE `employee_login`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `bank_id` (`bank_id`);
+
+--
+-- Index för tabell `loan`
+--
+ALTER TABLE `loan`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `customer_id` (`customer_id`);
+
+--
+-- Index för tabell `transactions`
+--
+ALTER TABLE `transactions`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `transactions_type_id` (`transactions_type_id`),
+  ADD KEY `to_bank_account_id` (`to_bank_account_id`),
+  ADD KEY `from_bank_account_id` (`from_bank_account_id`);
+
+--
+-- Index för tabell `transactions_type`
+--
+ALTER TABLE `transactions_type`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT för dumpade tabeller
+--
+
+--
+-- AUTO_INCREMENT för tabell `bank`
+--
+ALTER TABLE `bank`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT för tabell `bank_account`
+--
+ALTER TABLE `bank_account`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT för tabell `customer`
+--
+ALTER TABLE `customer`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT för tabell `customer_to_account`
+--
+ALTER TABLE `customer_to_account`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT för tabell `employee_login`
+--
+ALTER TABLE `employee_login`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT för tabell `loan`
+--
+ALTER TABLE `loan`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT för tabell `transactions`
+--
+ALTER TABLE `transactions`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- Restriktioner för dumpade tabeller
+--
+
+--
+-- Restriktioner för tabell `customer`
+--
+ALTER TABLE `customer`
+  ADD CONSTRAINT `customer_ibfk_1` FOREIGN KEY (`bank_id`) REFERENCES `bank` (`id`),
+  ADD CONSTRAINT `customer_ibfk_2` FOREIGN KEY (`bank_id`) REFERENCES `bank` (`id`);
+
+--
+-- Restriktioner för tabell `customer_to_account`
+--
+ALTER TABLE `customer_to_account`
+  ADD CONSTRAINT `customer_to_account_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`id`),
+  ADD CONSTRAINT `customer_to_account_ibfk_2` FOREIGN KEY (`bank_account_id`) REFERENCES `bank_account` (`id`);
+
+--
+-- Restriktioner för tabell `employee_login`
+--
+ALTER TABLE `employee_login`
+  ADD CONSTRAINT `employee_login_ibfk_1` FOREIGN KEY (`bank_id`) REFERENCES `bank` (`id`),
+  ADD CONSTRAINT `employee_login_ibfk_2` FOREIGN KEY (`bank_id`) REFERENCES `bank` (`id`);
+
+--
+-- Restriktioner för tabell `loan`
+--
+ALTER TABLE `loan`
+  ADD CONSTRAINT `loan_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`id`);
+
+--
+-- Restriktioner för tabell `transactions`
+--
+ALTER TABLE `transactions`
+  ADD CONSTRAINT `transactions_ibfk_1` FOREIGN KEY (`from_bank_account_id`) REFERENCES `bank_account` (`id`),
+  ADD CONSTRAINT `transactions_ibfk_2` FOREIGN KEY (`transactions_type_id`) REFERENCES `transactions_type` (`id`),
+  ADD CONSTRAINT `transactions_ibfk_3` FOREIGN KEY (`to_bank_account_id`) REFERENCES `bank_account` (`id`),
+  ADD CONSTRAINT `transactions_ibfk_4` FOREIGN KEY (`from_bank_account_id`) REFERENCES `bank_account` (`id`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -11,7 +11,7 @@ public class BankAccountService : IBankAccountService
     }
     public void NewAccount(Customer customer, BankAccount bankAccount)
     {
-        _iBankAccountHandeler.CreateAccount(bankAccount, customer);
+        _iBankAccountHandeler.CreateBankAccount(bankAccount, customer);
     }
     public List<BankAccount> GetAccounts(Customer customer)
     {
