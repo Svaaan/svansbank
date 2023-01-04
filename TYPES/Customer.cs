@@ -34,7 +34,8 @@ public class Customer
 
     public override string ToString()
     {
-        return $"{Name}\n{LastName}\n";
+        return $"Namn: {Name} {LastName}\nTelefonnummer: {PhoneNumber}\nE-Postadress: {Mail}\nPersonnummer: {PersonalNumber}\nStad: {City}\nAdress: {StreetAdress} {StreetNumber}\nPostnummer: {PostalNumber}";
+        
     }
 
 

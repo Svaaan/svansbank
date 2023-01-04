@@ -5,4 +5,5 @@ public interface ICustomerService
 {
     public void AddCustomer(Customer customer, BankAccount bankAccount);
     public Customer GetCustomer(Customer customer);
+    public bool UpdateEmail(Customer customer, string Email);
 }

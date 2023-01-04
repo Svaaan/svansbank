@@ -24,4 +24,17 @@ public class CustomerService : ICustomerService
       }    
       return customer;
     }
+    public bool UpdateEmail(Customer customer, string Email)
+    {
+        int rows = 0;
+        _icustomerHandeler.UpdateEmail(customer, Email);
+          if (rows > 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }
