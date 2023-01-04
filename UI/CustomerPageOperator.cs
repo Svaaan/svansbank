@@ -71,7 +71,7 @@ public class CustomerPageOperator
                     transactionOperator.ShowTransactions(bankAccountId);
                     break;
                 case 6:
-                    //Hämta konto information ifrån GetCustomer. 
+                    
                     customer = _iCustomerService.GetCustomer(customer);
 
                     System.Console.WriteLine(customer.ToString());
@@ -81,10 +81,28 @@ public class CustomerPageOperator
                     {
                         System.Console.WriteLine(item.ToString());
                     }
-                    //Enbart 2 styck redigerar kan göras på telefon nr och mail.
-                    // Resten av ändringar skall begäras till customer_Service
-                    //Skapa felhantering i CreateAccount så enkla misstag ej skickas till DB.
-                    break;
+
+                    while(true)
+                    {
+                        System.Console.WriteLine("[1]Redigera information");
+                        System.Console.WriteLine("[2] Gå tillbaka");
+                        answer = Console.ReadLine();
+                        int editProfile = int.Parse(answer);
+
+
+                        switch(editProfile)
+                        {
+                            case 1:
+                            System.Console.WriteLine("Ange ny mail:");
+                            string email = Console.ReadLine();
+                            _iCustomerService.UpdateEmail(customer, email);
+                            break;
+                            case 2:
+                            
+                            return;
+
+                        }
+                    }
                 case 7:
                     Environment.Exit(4);
                     break;
